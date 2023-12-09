@@ -164,8 +164,7 @@ body{
 
 
 .section5{
-    width:100%;height:600px;@include flex(center,center); 
-    margin-bottom:20px;background:$white2;overflow:hidden;
+    width:100%;height:600px;@include flex(center,center);background:$white2;overflow:hidden;
 
     .video1{
         width:50%;height:100%;@include padding(60px 80px);
@@ -214,6 +213,41 @@ body{
 
         video{
             width:100%;height:100%;object-fit: cover;border-radius:16px;
+        }
+    }
+}
+
+
+.section6{
+    background:$white2;@include flex(center,center);height:100px;color:$black;
+    @include Inter;font-size: 32px;font-style: normal;font-weight: 600;line-height: normal;
+}
+
+
+.section7{
+    width:100%;height:330px;background-color:$white;@include padding(10px);margin-bottom:20px;
+    overflow:hidden;@include flex(flex-start,center);
+
+    .people-slider{
+        @include flex(flex-start,center);height:100%;
+
+        .people-card{
+            min-width:500px;margin-right:20px;height:100%;background-color:$white2;border-radius:16px;
+            @include padding(20px);
+
+            .people1{
+                @include flex(flex-start,center);color:$grey4;@include Inter;font-size: 18px;
+                font-style: normal;font-weight: 500;line-height: normal;
+
+                img{
+                    margin-right:10px;
+                }
+            }
+
+            .speech{
+                margin-top:40px;color:$grey2;@include Inter;font-size: 18px;font-style: normal;
+                font-weight: 400;line-height: normal;
+            }
         }
     }
 }
