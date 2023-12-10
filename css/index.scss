@@ -9,11 +9,20 @@ body{
 
 .body-container{
     width:100%;
+
+
+    @include minScreen($biggest){
+        width:80%;
+    }
 }
 
 
 .section1{
     width:100%;height:750px;position:relative;overflow:hidden;@include flex(center,center);
+
+    @include maxScreen($mobile){
+        height:800px;
+    }
 
     img{
         width:100%;height:100%;object-fit:cover;position: absolute;
@@ -21,21 +30,52 @@ body{
 
     .section1-content{
         position: absolute;width:100%;height:100%;background-color:transparent;z-index:5;
+        @include padding(40px);
 
         .header{
             width:100%;height:100px;position: fixed;z-index:30;top:0;
             left:0;@include flex(space-between,center);@include padding(20px 60px);background: rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(2px);color:$white;@include Inter;
 
+            @include minScreen($biggest){
+                position:relative;
+            }
+
+            @include minMaxScreen($laptopMin,$laptopMax){
+                @include padding(20px 30px);
+            }
+
+            @include maxScreen($tablet){
+                @include padding(20px);height:70px;
+            }
+
             .first{
                 @include flex(flex-start,center);
                 img{
                     width:60px;height:60px;object-fit:contain;
+
+                    @include minMaxScreen($laptopMin,$laptopMax){
+                        width:40px;height:40px;
+                    }
+
+                    @include maxScreen($tablet){
+                        width:30px;height:30px;
+                    }
+        
                 }
 
                 div{
                     transform:translateX(70px);font-size: 24px;font-style: normal;font-weight: 600;
                     line-height: normal;
+
+                    @include minMaxScreen($laptopMin,$laptopMax){
+                        transform:translateX(50px);font-size:20px
+                    }
+
+                    @include maxScreen($tablet){
+                        font-size:14px;transform:translateX(40px);
+                    }
+        
                 }
             }
 
@@ -43,15 +83,29 @@ body{
                 @include flex(flex-start,center);
                 transform: translateX(-60px);
 
+                @include maxScreen($tablet){
+                    display:none;
+                }
+    
+
                 a{
                     text-decoration:none;color:$white;margin-left:20px;font-size: 18px;font-style: normal;
                     font-weight: 400;line-height: normal;
+
+                    @include minMaxScreen($laptopMin,$laptopMax){
+                        font-size:15px;
+                    }
                 }
             }
 
             .ham{
                 span{
                     color:white;font-size:40px;display:none;
+
+                    @include maxScreen($tablet){
+                        display: block;
+                    }
+        
                 }
             }
 
@@ -61,12 +115,40 @@ body{
         .elevate{
             width:100%;text-align: center;margin-top:250px;text-shadow: 0px 4px 20px rgba(255, 255, 255, 0.50);
             font-size: 48px;font-style: normal;font-weight: 600;line-height: normal;color:$white;@include Inter;
+
+            @include minMaxScreen($laptopMin,$laptopMax){
+                margin-top:200px;font-size:38px;
+            }
+
+            @include maxScreen($tablet){
+                font-size:32px;margin-top:150px;
+            }
+
+
+            @include maxScreen($mobile){
+                font-size:25px;margin-bottom:15px;
+            }
+
+
+            @include maxScreen($mobile2){
+                font-size:25px;margin-bottom:15px;
+            }
+
         }
 
 
         .redifine{
             width:100%;text-align: center;margin-top:30px;color:$white;@include Inter;font-size: 18px;
             font-style: normal;font-weight: 400;line-height: normal;
+
+            @include minMaxScreen($laptopMin,$laptopMax){
+                font-size:15px;
+            }
+
+            @include maxScreen($tablet){
+                font-size:12px;
+            }
+
         }
 
 
@@ -76,20 +158,36 @@ body{
             form{
                 width:600px;height:100px;border-radius: 16px;border: 1px solid #858585;
                 background: rgba(0, 0, 0, 0.10);backdrop-filter: blur(4px);
-                @include flex(flex-start,center);@include padding(20px);
+                @include flex(flex-start,center);@include padding(20px);flex-wrap:nowrap;
+
+                @include maxScreen($tablet){
+                    width:100%;flex-wrap:wrap;height:200px;
+                }
+    
 
                 div{
                     flex-basis:85%;margin-right:20px;@include flex(flex-start,center);
                     border-radius: 8px;border: 1px solid #E0E0E0;background:$white;
                     height:50px;@include padding(10px);
+
+                    @include maxScreen($tablet){
+                        margin-right:0px;flex-basis:100%;
+                    }
+        
                 
                     img{
                         height:22px;width:11px;object-fit: contain;
                     }
                     .text{
                         width:100%;margin-left:20px;background-color:transparent;border:none;
-                        outline:none;@include padding(0px 10px);color:#4F4F4F;
+                        outline:none;@include padding(0px 10px);color:#4F4F4F;width:100%;
                         @include Inter;font-size: 14px;font-style: normal;font-weight: 400;line-height: 21px;
+
+                        @include maxScreen($tablet){
+                            font-size:10px;
+                        }
+            
+            
                     }
                 }
 
@@ -98,6 +196,11 @@ body{
                     background:$red;height:50px;flex-basis:12%;color:$white;
                     @include Inter;font-size: 13px;font-style: normal;font-weight: 600;
                     line-height: normal;
+
+                    @include maxScreen($tablet){
+                        flex-basis:100%;
+                    }
+        
                 }
             }
         }
@@ -111,12 +214,30 @@ body{
 
 
 .section2{
-    width:100%;height:500px;overflow: hidden;@include padding(30px 60px);
+    width:100%;height:500px;overflow: hidden;@include padding(30px 60px);flex-direction:row;
     @include flex(space-between,center);background:$white;flex-wrap:wrap;
 
+    @include minMaxScreen($laptopMin,$laptopMax){
+        @include padding(30px 30px);
+    }
+
+    @include maxScreen($tablet){
+        height:1000px;flex-direction: column;@include padding(30px 30px);
+    }
+
+
     .card{
-        flex-basis:30%;height:90%;border-radius:16px;
-        @include flex(center,center);position: relative;
+        flex-basis:30%;height:90%;border-radius:16px;margin-bottom:0px;
+        @include flex(center,center);position: relative;width:30%;
+
+        @include minMaxScreen($laptopMin,$laptopMax){
+            flex-basis:32%;
+        }
+
+        @include maxScreen($tablet){
+            height:300px;width:100%;flex-basis: auto;
+        }
+
 
         img{
             width:100%;height:100%;object-fit: cover;border-radius:16px;
@@ -126,14 +247,36 @@ body{
             width:100%;height:140px;position: absolute;bottom:0;border-radius: 16px;
             background: rgba(0, 0, 0, 0.50);backdrop-filter: blur(4px);@include padding(10px);
 
+            @include maxScreen($tablet){
+                height:100px;
+            }
+
             .detail-topic{
                 margin-bottom:10px;color:$white;@include Inter;font-size: 24px;font-style: normal;
                 font-weight: 600;line-height: normal;
+
+                @include minMaxScreen($laptopMin,$laptopMax){
+                    font-size:18px;
+                }
+
+                @include maxScreen($tablet){
+                    font-size:16px;
+                }
+    
             }
 
             .detail-body{
                 width:100%;color:$white;@include Inter;font-size: 16px;font-style: normal;font-weight: 300;
                 line-height: normal;
+
+                @include minMaxScreen($laptopMin,$laptopMax){
+                    font-size:12px;
+                }
+
+                @include maxScreen($tablet){
+                    font-size:10px;
+                }
+    
             }
         }
 
@@ -144,6 +287,15 @@ body{
 .section3{
     width:100%;height:90px;@include flex(center,center);@include padding(20px);color:$grey;
     @include Inter;font-size: 32px;font-style: normal;font-weight: 600;line-height: normal;
+
+    @include minMaxScreen($laptopMin,$laptopMax){
+        font-size:25px;
+    }
+
+    @include maxScreen($tablet){
+        font-size:18px;height:50px;
+    }
+
 }
 
 
@@ -165,18 +317,70 @@ body{
 
 .section5{
     width:100%;height:600px;@include flex(center,center);background:$white2;overflow:hidden;
+    flex-wrap:wrap;flex-direction:row;
+
+    @include maxScreen($tablet){
+        height:800px;flex-direction: column;
+    }
+
+    @include maxScreen($mobile){
+        height:900px;
+    }
+
+    @include maxScreen($mobile2){
+        height:950px;
+    }
+
 
     .video1{
         width:50%;height:100%;@include padding(60px 80px);
 
+
+        @include minMaxScreen($laptopMin,$laptopMax){
+            @include padding(60px 40px);
+        }
+
+        
+        @include maxScreen($tablet){
+            width:100%;height:400px;@include padding(30px);
+        }
+
+
+        @include maxScreen($mobile){
+            height:450px;
+        }
+
+        @include maxScreen($mobile2){
+            height:470px;
+        }
+
+
         .video-topic{
             color:$black;@include Inter;font-size: 32px;font-style: normal;font-weight: 600;line-height: normal;
             margin-bottom:40px;
+
+            @include minMaxScreen($laptopMin,$laptopMax){
+                font-size:25px;margin-bottom:30px;
+            }
+
+            @include maxScreen($tablet){
+                font-size:18px;margin-bottom:20px;
+            }
+
         }
 
         .video-detail{
             color:$grey2;@include Inter;font-size: 16px;font-style: normal;font-weight: 300;line-height: normal;
             margin-bottom:40px;
+
+            @include minMaxScreen($laptopMin,$laptopMax){
+                font-size:14px;margin-bottom:30px;
+            }
+
+            @include maxScreen($tablet){
+                font-size:12px;margin-bottom:20px;
+            }
+
         }
 
         .video-members-block{
@@ -186,10 +390,30 @@ body{
                 margin-right:50px;
                 .span1{
                     color:$red;@include Inter;font-size: 48px;font-style: normal;font-weight: 600;line-height: normal;
+
+                    @include minMaxScreen($laptopMin,$laptopMax){
+                        font-size:33px;
+                    }
+
+                    @include maxScreen($tablet){
+                        font-size:24px;
+                    }
+        
+
                 }
                 .span2{
                     color:$grey3;@include Inter;font-size: 16px;font-style: normal;font-weight: 300;
                     line-height: normal;
+
+                    @include minMaxScreen($laptopMin,$laptopMax){
+                        font-size:13px;
+                    }
+
+                    @include maxScreen($tablet){
+                        font-size:12px;
+                    }
+        
+
                 }
             }
         }
@@ -198,10 +422,22 @@ body{
         .video-btn{
             width:100%;@include flex(flex-start,center);margin-top:40px;
 
+            @include minMaxScreen($laptopMin,$laptopMax){
+                margin-top:30px;
+            }
+
+            @include maxScreen($mobile){
+                margin-top:20px;
+            }
+
             .track,.contact{
                 color:$white;@include Inter;font-size: 13px;font-style: normal;font-weight: 600;line-height: normal;
                 background-color:$red;@include padding(15px 20px);border-radius:5px;text-decoration:none;
                 margin-right:40px;
+
+                @include maxScreen($mobile2){
+                    @include padding(10px);
+                }
             }
 
             .contact{
@@ -221,12 +457,24 @@ body{
 .section6{
     background:$white2;@include flex(center,center);height:100px;color:$black;
     @include Inter;font-size: 32px;font-style: normal;font-weight: 600;line-height: normal;
+
+    @include minMaxScreen($laptopMin,$laptopMax){
+        font-size:26px;
+    }
+
+    @include maxScreen($tablet){
+        font-size:18px;height:70px;
+    }
 }
 
 
 .section7{
     width:100%;height:330px;background-color:$white;@include padding(10px);
     overflow:hidden;@include flex(flex-start,center);
+
+    @include maxScreen($tablet){
+        height:250px;
+    }
 
     .people-slider{
         @include flex(flex-start,center);height:100%;
@@ -235,9 +483,17 @@ body{
             min-width:500px;margin-right:20px;height:100%;background-color:$white2;border-radius:16px;
             @include padding(20px);
 
+            @include maxScreen($tablet){
+                min-width:300px;
+            }
+
             .people1{
                 @include flex(flex-start,center);color:$grey4;@include Inter;font-size: 18px;
                 font-style: normal;font-weight: 500;line-height: normal;
+
+                @include maxScreen($tablet){
+                    font-size:14px;
+                }
 
                 img{
                     margin-right:10px;
@@ -247,6 +503,10 @@ body{
             .speech{
                 margin-top:40px;color:$grey2;@include Inter;font-size: 18px;font-style: normal;
                 font-weight: 400;line-height: normal;
+
+                @include maxScreen($tablet){
+                    font-size:10px;margin-top:20px;
+                }
             }
         }
     }
@@ -256,14 +516,34 @@ body{
 .section8{
     width:100%;height:750px;background-color:$white;padding-top:100px;
 
+    @include maxScreen($tablet){
+        padding-top:50px;height:500px;
+    }
+
     .surelink{
         color:$grey4;@include Inter;font-size: 128px;font-style: normal;font-weight: 700;line-height: normal;
         padding-left:70px;margin-bottom:40px;
+
+        @include minMaxScreen($laptopMin,$laptopMax){
+            font-size:100px;
+        }
+
+        @include maxScreen($tablet){
+            font-size:36px;padding-left:30px;
+        }
+
+        @include maxScreen($mobile2){
+            font-size:25px;
+        }
     }
 
     .change{
         @include Inter;font-size: 22px;font-style: normal;font-weight: 500;line-height: normal;
         padding-left:70px;margin-bottom:20px;
+
+        @include maxScreen($tablet){
+            font-size:14px;padding-left: 30px;
+        }
 
         a{
             text-decoration:none;color:$grey4;
@@ -275,6 +555,10 @@ body{
         @include Inter;font-size: 14px;font-style: normal;font-weight: 400;line-height: normal;
 
         margin-top:80px;@include padding(30px 70px 30px 70px);
+
+        @include maxScreen($tablet){
+            font-size:10px;@include padding(20px 30px);
+        }
     }
 }
 
