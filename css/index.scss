@@ -225,7 +225,7 @@ body{
 
 
 .section7{
-    width:100%;height:330px;background-color:$white;@include padding(10px);margin-bottom:20px;
+    width:100%;height:330px;background-color:$white;@include padding(10px);
     overflow:hidden;@include flex(flex-start,center);
 
     .people-slider{
@@ -249,5 +249,31 @@ body{
                 font-weight: 400;line-height: normal;
             }
         }
+    }
+}
+
+
+.section8{
+    width:100%;height:750px;background-color:$white;padding-top:100px;
+
+    .surelink{
+        color:$grey4;@include Inter;font-size: 128px;font-style: normal;font-weight: 700;line-height: normal;
+        padding-left:70px;margin-bottom:40px;
+    }
+
+    .change{
+        @include Inter;font-size: 22px;font-style: normal;font-weight: 500;line-height: normal;
+        padding-left:70px;margin-bottom:20px;
+
+        a{
+            text-decoration:none;color:$grey4;
+        }
+    }
+
+    .copyright{
+        border-top: 1px solid $grey;border-bottom: 1px solid $grey;color:$grey4;
+        @include Inter;font-size: 14px;font-style: normal;font-weight: 400;line-height: normal;
+
+        margin-top:80px;@include padding(30px 70px 30px 70px);
     }
 }
