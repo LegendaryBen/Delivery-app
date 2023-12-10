@@ -320,11 +320,11 @@ body{
     flex-wrap:wrap;flex-direction:row;
 
     @include maxScreen($tablet){
-        height:800px;flex-direction: column;
+        height:750px;flex-direction: column;
     }
 
     @include maxScreen($mobile){
-        height:900px;
+        height:850px;
     }
 
     @include maxScreen($mobile2){
@@ -342,12 +342,12 @@ body{
 
         
         @include maxScreen($tablet){
-            width:100%;height:400px;@include padding(30px);
+            width:100%;height:350px;@include padding(30px);
         }
 
 
         @include maxScreen($mobile){
-            height:450px;
+            height:420px;
         }
 
         @include maxScreen($mobile2){
