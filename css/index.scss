@@ -277,3 +277,37 @@ body{
         margin-top:80px;@include padding(30px 70px 30px 70px);
     }
 }
+
+.sidemenu{
+    position:fixed;top:-200%;left:0;height:100%;width:100%;background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(30px);z-index:100;@include padding(20px);overflow:auto;
+    transition:0.5s;
+
+    .head{
+        @include flex(space-between,center);margin-bottom:100px;
+
+        .head-logo{
+            @include flex(flex-start,center);
+
+            div{
+                transform:translateX(10px);color:$white;@include Inter;font-size: 14px;font-style: normal;
+                font-weight: 600;line-height: normal;
+            }
+        }
+
+        img{
+            width:50px;height:50px;object-fit:contain;
+        }
+
+        span{
+            color:$white;font-size:40px;
+        }
+    }
+
+
+    .sidemenu-change{
+        text-align: center;color:$white2;@include padding(30px);@include Inter;
+        font-size: 18px;font-style: normal;font-weight: 700;line-height: normal;
+    }
+
+}
