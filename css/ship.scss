@@ -1,0 +1,144 @@
+@import './partials/mixin';
+@import './partials/reset';
+@import './partials/variables';
+
+body{
+    @include flex(center,flex-start);
+}
+
+.body-container{
+    width:100%;
+
+
+    @include minScreen($biggest){
+        width:80%;
+    }
+}
+
+
+.header{
+    width:100%;height:100px;background-color:blue;@include flex(space-between,center);
+    @include padding(20px 60px);background:$black;backdrop-filter: blur(2px);
+    position:fixed;top:0;left:0;z-index:40;
+
+    .logo{
+        @include flex(flex-start,center);
+
+        img{
+          width:50px;height:50px;object-fit:contain;margin-right:10px;
+
+        }  
+
+        span{
+            color:$white;@include Inter;font-size: 24px;font-style: normal;font-weight: 600;line-height: normal;
+        }
+    }
+
+    .links{
+        @include flex(flex-start,center);transform:translateX(-100px);
+
+        a{
+            text-decoration:none;color:$white;@include Inter;font-size: 18px;font-style: normal;
+            font-weight: 400;line-height: normal;margin-left:20px;
+        }
+    }
+
+    .ham{
+        font-size:40px;color:$white;display:none;
+    }
+}
+
+.section2{
+    width:100%;position:relative;height:calc(100vh - 100px);margin-top:100px;overflow:hidden;
+
+    .form-details{
+        width:100%;height:100%;overflow:auto;@include padding(40px 60px 0px 60px);
+        position:absolute;
+
+          &::-webkit-scrollbar {
+            width: 10px;
+          }
+          
+          &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+          }
+          
+          &::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+          }
+
+        .back-btn{
+            @include flex(flex-start,center);@include Inter;color:$black;
+            margin-bottom:100px;
+
+            span{
+                font-size:50px;
+            }
+
+            div{
+                font-size: 32px;font-style: normal;font-weight: 700;line-height: 21px;
+                margin-left:20px;
+            }
+        }
+
+        .user-container{
+            margin-bottom:40px;
+        }
+
+        .info{
+            color:$black;@include Inter;font-size: 24px;font-style: normal;font-weight: 700;line-height: 21px;
+            margin-bottom:20px;
+        }
+
+        .user-input{
+            @include flex(space-between,center);flex-wrap: wrap;margin-bottom:20px;
+
+            .user-box{
+                width:45%;
+
+                input{
+                    width:100%;@include padding(8px 20px);margin-top:10px;outline:none;
+                    border-radius: 3px;border: 1px solid $grey;background:$white;
+                    color:$grey3;@include Inter;font-size: 14px;font-style: normal;font-weight: 400;
+                    line-height: 21px; 
+                }
+
+                label{
+                    color:$black;@include Inter;font-size: 18px;font-style: normal;font-weight: 400;line-height: 21px;
+
+                    span{
+                        font-weight:300;color:$grey3;
+                    }
+                }
+            }
+        }
+
+        .proceed{
+            width:45%;color:$white;@include Inter;font-size: 18px;font-style: normal;
+            font-weight: 600;line-height: normal;height:40px;border-radius: 8px;
+            background:$red;@include flex(center,center);margin-bottom:20px;
+        }
+
+        .submit{
+            width:45%;color:$white;@include Inter;font-size: 18px;font-style: normal;
+            font-weight: 600;line-height: normal;height:40px;border-radius: 8px;
+            background:$red;@include flex(center,center);margin-bottom:20px;
+            border:none;outline:none;
+        }
+
+    }
+
+    .first{
+        z-index:2;background-color:white;
+    }
+
+    .second{
+        z-index:1;background-color:white;
+    }
+
+    .third{
+        z-index:3;background-color:white;
+    }
+}
