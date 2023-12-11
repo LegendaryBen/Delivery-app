@@ -592,6 +592,10 @@ body{
     .sidemenu-change{
         text-align: center;color:$white2;@include padding(30px);@include Inter;
         font-size: 18px;font-style: normal;font-weight: 700;line-height: normal;
+
+        a{
+            text-decoration:none;color:$white2;
+        }
     }
 
 }
