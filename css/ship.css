@@ -34,6 +34,22 @@ body {
   left: 0;
   z-index: 40;
 }
+@media only screen and (min-width: 1800px) {
+  .header {
+    position: relative;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1380px) {
+  .header {
+    padding: 20px 30px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .header {
+    padding: 20px 20px;
+    height: 70px;
+  }
+}
 .header .logo {
   display: flex;
   justify-content: flex-start;
@@ -45,6 +61,12 @@ body {
   object-fit: contain;
   margin-right: 10px;
 }
+@media only screen and (max-width: 1023px) {
+  .header .logo img {
+    width: 30px;
+    height: 30px;
+  }
+}
 .header .logo span {
   color: #FFF;
   font-family: "Inter", sans-serif;
@@ -53,11 +75,31 @@ body {
   font-weight: 600;
   line-height: normal;
 }
+@media only screen and (min-width: 1024px) and (max-width: 1380px) {
+  .header .logo span {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .header .logo span {
+    font-size: 14px;
+  }
+}
 .header .links {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   transform: translateX(-100px);
+}
+@media only screen and (max-width: 1023px) {
+  .header .links {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1380px) {
+  .header .links {
+    transform: translateX(-50px);
+  }
 }
 .header .links a {
   text-decoration: none;
@@ -69,10 +111,21 @@ body {
   line-height: normal;
   margin-left: 20px;
 }
+@media only screen and (min-width: 1024px) and (max-width: 1380px) {
+  .header .links a {
+    font-size: 15px;
+  }
+}
 .header .ham {
   font-size: 40px;
   color: #FFF;
   display: none;
+}
+@media only screen and (max-width: 1023px) {
+  .header .ham {
+    display: block;
+    font-size: 30px;
+  }
 }
 
 .section2 {
@@ -82,12 +135,27 @@ body {
   margin-top: 100px;
   overflow: hidden;
 }
+@media only screen and (max-width: 1023px) {
+  .section2 {
+    height: calc(100vh - 120px);
+  }
+}
 .section2 .form-details {
   width: 100%;
   height: 100%;
   overflow: auto;
   padding: 40px 60px 0px 60px;
   position: absolute;
+}
+@media only screen and (min-width: 1024px) and (max-width: 1380px) {
+  .section2 .form-details {
+    padding: 40px 30px 0px 30px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details {
+    padding: 20px 30px 0px 30px;
+  }
 }
 .section2 .form-details::-webkit-scrollbar {
   width: 10px;
@@ -108,8 +176,18 @@ body {
   color: #000;
   margin-bottom: 100px;
 }
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .back-btn {
+    margin-bottom: 50px;
+  }
+}
 .section2 .form-details .back-btn span {
   font-size: 50px;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .back-btn span {
+    font-size: 30px;
+  }
 }
 .section2 .form-details .back-btn div {
   font-size: 32px;
@@ -118,8 +196,19 @@ body {
   line-height: 21px;
   margin-left: 20px;
 }
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .back-btn div {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+}
 .section2 .form-details .user-container {
   margin-bottom: 40px;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .user-container {
+    margin-bottom: 10px;
+  }
 }
 .section2 .form-details .info {
   color: #000;
@@ -130,15 +219,35 @@ body {
   line-height: 21px;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .info {
+    font-size: 18px;
+  }
+}
 .section2 .form-details .user-input {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  flex-direction: row;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .user-input {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
 }
 .section2 .form-details .user-input .user-box {
   width: 45%;
+  margin-bottom: 0px;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .user-input .user-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 .section2 .form-details .user-input .user-box input {
   width: 100%;
@@ -155,6 +264,11 @@ body {
   font-weight: 400;
   line-height: 21px;
 }
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .user-input .user-box input {
+    font-size: 10px;
+  }
+}
 .section2 .form-details .user-input .user-box label {
   color: #000;
   font-family: "Inter", sans-serif;
@@ -162,6 +276,11 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 21px;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .user-input .user-box label {
+    font-size: 14px;
+  }
 }
 .section2 .form-details .user-input .user-box label span {
   font-weight: 300;
@@ -183,6 +302,12 @@ body {
   align-items: center;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .proceed {
+    font-size: 14px;
+    width: 100%;
+  }
+}
 .section2 .form-details .submit {
   width: 45%;
   color: #FFF;
@@ -201,6 +326,12 @@ body {
   border: none;
   outline: none;
 }
+@media only screen and (max-width: 1023px) {
+  .section2 .form-details .submit {
+    font-size: 14px;
+    width: 100%;
+  }
+}
 .section2 .first {
   z-index: 2;
   background-color: white;
@@ -212,4 +343,61 @@ body {
 .section2 .third {
   z-index: 3;
   background-color: white;
+}
+
+.sidemenu {
+  position: fixed;
+  top: -200%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(30px);
+  z-index: 100;
+  padding: 20px;
+  overflow: auto;
+  transition: 0.5s;
+}
+.sidemenu .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.sidemenu .head .head-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sidemenu .head .head-logo div {
+  transform: translateX(10px);
+  color: #FFF;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.sidemenu .head img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+.sidemenu .head span {
+  color: #FFF;
+  font-size: 40px;
+}
+.sidemenu .sidemenu-change {
+  text-align: center;
+  color: #F2F2F2;
+  padding: 30px;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.sidemenu .sidemenu-change a {
+  text-decoration: none;
+  color: #F2F2F2;
 }/*# sourceMappingURL=ship.css.map */
