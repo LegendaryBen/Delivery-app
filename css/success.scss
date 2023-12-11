@@ -1,0 +1,43 @@
+@import './partials/mixin';
+@import './partials/reset';
+@import './partials/variables';
+
+
+.success-img{
+    width:100%;margin-top:300px;@include flex(center,center);margin-bottom:20px;
+
+    @include maxScreen($tablet){
+        margin-top:250px;
+    }
+}
+
+.thanks{
+    width:100%;text-align:center;color:$grey2;@include Inter;font-size: 24px;font-style: normal;
+    font-weight: 400;line-height: normal;margin-bottom:20px;@include padding(0px 30px);
+
+    @include maxScreen($tablet){
+        font-size:16px;
+    }
+}
+
+.thanks-msg{
+    color:$grey3;@include Inter;text-align: center;font-size: 18px;font-style: normal;font-weight: 400;
+    line-height: normal;margin-bottom:30px;@include padding(0px 30px);
+
+    @include maxScreen($tablet){
+        font-size:14px;
+    }
+}
+
+.go-home{
+    @include padding(0px 30px);@include flex(center,center);
+    a{
+        width:50%;height:40px;@include flex(center,center);text-decoration:none;color: #FFF;
+        @include Inter;font-size: 14px;font-style: normal;font-weight: 600;line-height: normal;
+        background-color:$red;border-radius:8px;
+
+        @include maxScreen($tablet){
+            height:35px;font-size:13px;width:90%;
+        }
+    }
+}
