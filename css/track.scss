@@ -1,0 +1,156 @@
+@import './partials/mixin';
+@import './partials/reset';
+@import './partials/variables';
+
+
+
+.track-history{
+    margin-top:100px;@include padding(40px 60px);
+
+    @include minMaxScreen($laptopMin,$laptopMax){
+        @include padding(30px 30px);
+    }
+
+    @include maxScreen($tablet){
+        @include padding(30px 30px);
+    }
+}
+
+
+.track-number{
+    width:400px;min-height:40px;@include flex(flex-start,center);@include padding(10px);
+    border-radius: 8px;border: 1px solid var(--Gray-5, #E0E0E0);background:$white;
+    margin-bottom:20px;
+
+    @include maxScreen($tablet){
+        width:100%;
+    }
+
+
+    img{
+        margin-right:20px;
+    }
+
+    div{
+        flex:1;color:$black;@include Inter;font-size: 16px;font-style: normal;font-weight: 600;line-height: 21px;
+
+        @include maxScreen($tablet){
+            font-size:14px;
+        }
+
+    }
+}
+
+
+.item-name{
+    color:$black;@include Inter;font-size: 18px;font-style: normal;font-weight: 400;line-height: 21px;
+    margin-bottom:20px;
+
+    @include maxScreen($tablet){
+        font-size:14px;
+    }
+
+}
+
+
+.name-block{
+
+    width:400px;min-height:40px;@include flex(flex-start,center);@include padding(10px);
+    border-radius: 8px;border: 1px solid var(--Gray-5, #E0E0E0);background:$white2;
+    margin-bottom:10px;color:$black;@include Inter;font-size: 16px;font-style: normal;
+    font-weight: 600;line-height: 21px;
+
+    @include maxScreen($tablet){
+        font-size:14px;width:100%;
+    }
+
+
+}
+
+
+.arrow{
+    @include flex(flex-start,center);margin-top:30px;margin-bottom:40px;
+    text-decoration:none;
+
+    span{
+        font-size:30px;
+
+        @include maxScreen($tablet){
+            font-size:25px;
+        }
+
+    }
+
+    div{
+        margin-left:10px;color:$black;@include Inter;font-size:28px;font-style: normal;font-weight: 700;
+        line-height: 21px;
+
+        @include maxScreen($tablet){
+            font-size:24px;
+        }
+
+    }
+}
+
+
+.tracks{
+    min-height:90px;border-left:1px solid $red;position:relative;padding-left:20px;
+    padding-bottom:10px;padding-right:10px;
+
+    &::before{
+        content:'';position: absolute;left:-7.5px;height:15px;width:15px;background-color:$red;
+        border-radius:50%;
+    }
+
+    .track-route{
+        color:$grey3;@include Inter;font-size: 18px;font-style: normal;font-weight: 400;line-height: 21px;
+        margin-bottom:10px;
+
+        @include maxScreen($tablet){
+            font-size:14px;
+        }
+
+    }
+
+    .track-city{
+        color:$black;@include Inter;font-size: 18px;font-style: normal;font-weight: 600;line-height: 21px;
+        margin-bottom:10px;
+
+        @include maxScreen($tablet){
+            font-size:14px;
+        }
+
+    }
+
+    .track-time{
+        color:$grey3;@include Inter;font-size: 18px;font-style: normal;font-weight: 400;line-height: 21px;
+
+        @include maxScreen($tablet){
+            font-size:14px;
+        }
+
+    }
+
+    .track-status{
+        content:'';position:absolute;left:-6.3px;height:13px;width:13px;background-color:white;
+        border-radius:50%;z-index:3;top:1px;
+    }
+
+
+}
+
+.pick-up{
+    width:400px;height:50px;@include flex(center,center);color:$white;background-color:$red;
+    margin-top:40px;margin-bottom:30px;border-radius:8px;@include Inter;font-size: 18px;font-style: normal;
+    font-weight: 600;line-height: normal;text-decoration:none;
+
+    @include maxScreen($tablet){
+        font-size:14px;width:100%;height:40px;
+    }
+
+}
+
+.dull{
+    background-color:$grey3;
+}
+
