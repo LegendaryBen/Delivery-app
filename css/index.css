@@ -33,11 +33,17 @@ body {
     height: 800px;
   }
 }
-.section1 img {
+.section1 .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
+  animation-name: move;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 5s;
+  transform: scale(150%);
 }
 .section1 .section1-content {
   position: absolute;
@@ -102,22 +108,20 @@ body {
   }
 }
 .section1 .section1-content .header .first div {
-  transform: translateX(70px);
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin-left: 10px;
 }
 @media only screen and (min-width: 1024px) and (max-width: 1380px) {
   .section1 .section1-content .header .first div {
-    transform: translateX(50px);
     font-size: 20px;
   }
 }
 @media only screen and (max-width: 1023px) {
   .section1 .section1-content .header .first div {
     font-size: 14px;
-    transform: translateX(40px);
   }
 }
 .section1 .section1-content .header .link {
@@ -145,13 +149,13 @@ body {
     font-size: 15px;
   }
 }
-.section1 .section1-content .header .ham span {
+.section1 .section1-content .header .ham-container span {
   color: white;
   font-size: 40px;
   display: none;
 }
 @media only screen and (max-width: 1023px) {
-  .section1 .section1-content .header .ham span {
+  .section1 .section1-content .header .ham-container span {
     display: block;
   }
 }
@@ -334,11 +338,13 @@ body {
   height: 90%;
   border-radius: 16px;
   margin-bottom: 0px;
+  transition: 3s;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 30%;
+  transform: translateY(350%);
 }
 @media only screen and (min-width: 1024px) and (max-width: 1380px) {
   .section2 .card {
@@ -448,6 +454,11 @@ body {
   margin-bottom: 20px;
 }
 .section4 .image-slider {
+  animation-name: slide;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  position: relative;
+  animation-timing-function: linear;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -694,6 +705,11 @@ body {
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+  animation-name: slide;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  position: relative;
+  animation-timing-function: linear;
 }
 .section7 .people-slider .people-card {
   min-width: 500px;
@@ -874,4 +890,35 @@ body {
 .sidemenu .sidemenu-change a {
   text-decoration: none;
   color: #F2F2F2;
+}
+
+@keyframes move {
+  0% {
+    transform: scale(150%);
+    width: 100%;
+  }
+  25% {
+    width: 400%;
+    transform: translateX(300px);
+  }
+  50% {
+    transform: translateX(0px);
+    width: 400%;
+  }
+  75% {
+    transform: translateX(-300px);
+    width: 400%;
+  }
+  100% {
+    transform: scale(100%) translateX(0px);
+    width: 100%;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }/*# sourceMappingURL=index.css.map */
