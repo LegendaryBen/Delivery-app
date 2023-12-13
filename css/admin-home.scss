@@ -1,0 +1,171 @@
+@import "../css/partials/mixin";
+@import "../css/partials/reset";
+@import "../css/partials/variables";
+
+
+.section1{
+    width:100%;@include padding(30px 60px);@include flex(space-between,center);
+
+
+    .block1,.block2{
+        @include flex(flex-start,center);
+    }
+
+    .block1{
+        img{
+            width:50px;height:50px;object-fit:contain;margin-right:10px;
+        }
+
+        span{
+            color:$black;color: #000;@include Inter;font-size: 24px;font-style: normal;
+            font-weight: 600;line-height: normal;
+        }
+    }
+
+    .block2{
+        a{
+            color:$grey2;@include Inter;font-size: 18px;font-style: normal;font-weight: 300;line-height: normal;
+        }
+
+        span{
+            color:$red2;
+        }
+    }
+}
+
+
+.section2{
+    @include flex(space-between,center);@include padding(10px 60px);
+
+    .admin{
+        color:$black;@include Inter;font-size: 20px;font-style: normal;font-weight: 600;line-height: 40px;
+    }
+
+    form{
+        @include flex(flex-start,center);
+
+        input{
+            width:300px;@include padding(10px);background-color:transparent;
+            outline:none;border-radius: 4px;border: 1px solid #E2E8F0;
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        }
+
+        button{
+            background-color:transparent;border:none;outline:none;margin-left:20px;
+            outline:none;filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
+        }
+    }
+}
+
+
+.section3{
+    @include flex(flex-start,center);@include padding(0px 60px);margin-top:20px;
+
+    a{
+        @include flex(center,center);flex-basis:auto;flex-grow:1;
+        text-decoration:none;@include padding(5px 0px);background-color:$grey5;
+        color:$grey2;@include Inter;font-size: 16px;font-style: normal;font-weight: 500;line-height: 40px;
+    }
+
+
+    .submitted{
+        background-color:$red;border-radius:4px;color:white;
+    }
+}
+
+
+.section4{
+    @include padding(0px 60px);width:100%;
+
+    div{
+        @include flex(flex-start,center);margin-top:10px;height:30px;width:100%;
+        border-radius: 6px;border: 1px solid var(--Gray-5, #E0E0E0);background: #FDF8F7;
+
+        img{
+            margin-right:20px;
+        }
+
+        span{
+            color:$red;@include Inter;font-size: 14px;font-style: normal;font-weight: 300;line-height: 20px;
+        }
+    }
+
+    
+}
+
+
+.section5{
+    width:100%;@include padding(20px 40px);margin-top:20px;background-color:$white2;
+    overflow:hidden;
+
+    .items{
+        width:100%;@include flex(flex-start,center);@include Inter;margin-bottom:20px;
+
+        .item-children{
+            flex-basis:25%;@include padding(10px);
+        }
+    }
+
+    .item-owner{
+        color:$grey2;font-size: 16px;font-style: normal;font-weight: 500;line-height: normal;
+        margin-bottom:10px;
+    }
+
+    .item-name{
+        color:$grey2;font-size: 14px;font-style: normal;font-weight: 300;line-height: normal;
+    }
+
+    .links{
+        @include flex(flex-start,center);
+
+        a{
+            @include padding(10px);text-decoration:none;background-color:$red;color:$white;
+            border-radius:4px;transition:0.5s;border:1px solid $red;margin-right:10px;
+            font-size: 11px;font-style: normal;font-weight: 500;line-height: normal;
+
+            &:hover{
+                background-color:$white;color:$red;
+            }
+
+        }
+    }
+
+    .item-status{
+        @include flex(center,center);
+
+        span{
+            color:$grey2;font-size: 16px;font-style: normal;font-weight: 400;line-height: normal;
+        }
+
+        div{
+            color:$red;font-size: 10px;font-style: normal;font-weight: 600;line-height: normal;
+            margin-left:10px;border-radius: 61px;background:#FFEAE5;@include padding(10px);
+        }
+    }
+}
+
+
+.paginate{
+    @include flex(center,center);margin-top:20px;
+
+    .numbers{
+        flex-basis:20%;margin-left:20px;margin-right:20px;@include flex(flex-start,center);
+        flex-wrap:wrap;
+
+        a{
+            color: #FF4D25;@include Inter;font-size: 14px;font-style: normal;font-weight: 500;
+            line-height: normal;border-radius: 4px;background: #FFEAE5;@include padding(7px);
+            text-decoration:none;margin-right:10px;margin-bottom:10px;
+        }
+
+        .active{
+            color:$white;background-color:$red;
+        }
+    }
+
+    .diff{
+        color: #FF4D25;@include Inter;font-size: 14px;font-style: normal;font-weight: 500;
+        line-height: normal;border-radius: 4px;background: #FFEAE5;@include padding(7px);
+        text-decoration:none;margin-bottom:10px;
+    }
+}
