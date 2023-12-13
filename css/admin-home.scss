@@ -5,6 +5,15 @@
 
 .section1{
     width:100%;@include padding(30px 60px);@include flex(space-between,center);
+    flex-direction:row;
+
+    @include minMaxScreen($laptopMin,$laptopMax){
+        @include padding(30px 30px);
+    }
+
+    @include maxScreen($tablet){
+        @include padding(20px 20px);flex-direction: column;align-items:flex-start;
+    }
 
 
     .block1,.block2{
@@ -12,19 +21,39 @@
     }
 
     .block1{
+
+        margin-bottom:0px;
+
+        @include maxScreen($tablet){
+            margin-bottom:20px;
+        }
+
         img{
             width:50px;height:50px;object-fit:contain;margin-right:10px;
+
+            @include maxScreen($tablet){
+                width:30px;height:30px;
+            }
+
         }
 
         span{
             color:$black;color: #000;@include Inter;font-size: 24px;font-style: normal;
             font-weight: 600;line-height: normal;
+
+            @include maxScreen($tablet){
+                font-size:18px;
+            }
         }
     }
 
     .block2{
         a{
             color:$grey2;@include Inter;font-size: 18px;font-style: normal;font-weight: 300;line-height: normal;
+
+            @include maxScreen($tablet){
+                font-size:13px;
+            }
         }
 
         span{
@@ -35,19 +64,42 @@
 
 
 .section2{
-    @include flex(space-between,center);@include padding(10px 60px);
+    @include flex(space-between,center);@include padding(10px 60px);flex-direction:row;
+
+
+    @include minMaxScreen($laptopMin,$laptopMax){
+        @include padding(10px 30px);
+    }
+
+    @include maxScreen($tablet){
+        flex-direction: column;align-items:flex-start;@include padding(10px 20px);
+    }
 
     .admin{
         color:$black;@include Inter;font-size: 20px;font-style: normal;font-weight: 600;line-height: 40px;
+        margin-bottom:0px;
+
+        @include maxScreen($tablet){
+            margin-bottom:5px;font-size:15px;
+        }
     }
 
     form{
-        @include flex(flex-start,center);
+        @include flex(flex-start,center);width:auto;
+
+        @include maxScreen($tablet){
+            width:100%;
+        }
 
         input{
             width:300px;@include padding(10px);background-color:transparent;
             outline:none;border-radius: 4px;border: 1px solid #E2E8F0;
             box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+            @include maxScreen($tablet){
+                width:93%;
+            }
+            
         }
 
         button{
@@ -60,11 +112,25 @@
 
 .section3{
     @include flex(flex-start,center);@include padding(0px 60px);margin-top:20px;
+    flex-direction:row;
+
+    @include minMaxScreen($laptopMin,$laptopMax){
+        @include padding(0px 30px);
+    }
+
+    @include maxScreen($tablet){
+        @include padding(0px 20px);flex-direction:column;align-items:flex-start;
+    }
 
     a{
-        @include flex(center,center);flex-basis:auto;flex-grow:1;
-        text-decoration:none;@include padding(5px 0px);background-color:$grey5;
+        @include flex(center,center);flex-basis:auto;flex-grow:1;width:auto;
+        text-decoration:none;@include padding(5px 5px);background-color:$grey5;
         color:$grey2;@include Inter;font-size: 16px;font-style: normal;font-weight: 500;line-height: 40px;
+        margin-bottom:0px;
+
+        @include maxScreen($tablet){
+            margin-bottom:10px;width:100%;font-size:13px;@include padding(3px);
+        }
     }
 
 
@@ -77,9 +143,21 @@
 .section4{
     @include padding(0px 60px);width:100%;
 
+    @include minMaxScreen($laptopMin,$laptopMax){
+        @include padding(0px 30px);
+    }
+
+
+    @include maxScreen($tablet){
+        @include padding(0px 20px);
+    }
+
+
+
     div{
-        @include flex(flex-start,center);margin-top:10px;height:30px;width:100%;
+        @include flex(flex-start,center);margin-top:10px;min-height:30px;width:100%;
         border-radius: 6px;border: 1px solid var(--Gray-5, #E0E0E0);background: #FDF8F7;
+        @include padding(10px 10px);
 
         img{
             margin-right:20px;
@@ -87,6 +165,10 @@
 
         span{
             color:$red;@include Inter;font-size: 14px;font-style: normal;font-weight: 300;line-height: 20px;
+
+            @include maxScreen($tablet){
+                font-size:11px;
+            }
         }
     }
 
@@ -98,8 +180,20 @@
     width:100%;@include padding(20px 40px);margin-top:20px;background-color:$white2;
     overflow:hidden;
 
+    @include minMaxScreen($laptopMin,$laptopMax){
+        @include padding(20px 20px);
+    }
+
+    @include maxScreen($tablet){
+        @include padding(20px 20px);overflow:auto;
+    }
+
     .items{
         width:100%;@include flex(flex-start,center);@include Inter;margin-bottom:20px;
+
+        @include maxScreen($tablet){
+            width:900px;
+        }
 
         .item-children{
             flex-basis:25%;@include padding(10px);
@@ -109,10 +203,18 @@
     .item-owner{
         color:$grey2;font-size: 16px;font-style: normal;font-weight: 500;line-height: normal;
         margin-bottom:10px;
+
+        @include maxScreen($tablet){
+            font-size:13px;
+        }
     }
 
     .item-name{
         color:$grey2;font-size: 14px;font-style: normal;font-weight: 300;line-height: normal;
+
+        @include maxScreen($tablet){
+            font-size:11px;
+        }
     }
 
     .links{
@@ -122,6 +224,10 @@
             @include padding(10px);text-decoration:none;background-color:$red;color:$white;
             border-radius:4px;transition:0.5s;border:1px solid $red;margin-right:10px;
             font-size: 11px;font-style: normal;font-weight: 500;line-height: normal;
+
+            @include maxScreen($tablet){
+                font-size:8px;@include padding(5px);
+            }
 
             &:hover{
                 background-color:$white;color:$red;
@@ -135,27 +241,49 @@
 
         span{
             color:$grey2;font-size: 16px;font-style: normal;font-weight: 400;line-height: normal;
+
+            @include maxScreen($tablet){
+                font-size:13px;
+            }
+
         }
 
         div{
             color:$red;font-size: 10px;font-style: normal;font-weight: 600;line-height: normal;
             margin-left:10px;border-radius: 61px;background:#FFEAE5;@include padding(10px);
+
+            @include maxScreen($tablet){
+                font-size:7px;@include padding(5px);
+            }
         }
     }
 }
 
 
 .paginate{
-    @include flex(center,center);margin-top:20px;
+    @include flex(center,center);margin-top:20px;flex-direction:row;
+
+    @include maxScreen($tablet){
+        flex-direction:column;
+    }
 
     .numbers{
         flex-basis:20%;margin-left:20px;margin-right:20px;@include flex(flex-start,center);
-        flex-wrap:wrap;
+        flex-wrap:wrap;margin-bottom:0px;
+
+        @include maxScreen($tablet){
+            flex-basis:90%;
+        }
 
         a{
             color: #FF4D25;@include Inter;font-size: 14px;font-style: normal;font-weight: 500;
             line-height: normal;border-radius: 4px;background: #FFEAE5;@include padding(7px);
             text-decoration:none;margin-right:10px;margin-bottom:10px;
+
+            @include maxScreen($tablet){
+                font-size:10px;
+            }
+            
         }
 
         .active{
@@ -167,5 +295,9 @@
         color: #FF4D25;@include Inter;font-size: 14px;font-style: normal;font-weight: 500;
         line-height: normal;border-radius: 4px;background: #FFEAE5;@include padding(7px);
         text-decoration:none;margin-bottom:10px;
+
+        @include maxScreen($tablet){
+            font-size:10px;
+        }
     }
 }
