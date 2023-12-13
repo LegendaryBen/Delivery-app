@@ -1,0 +1,98 @@
+@import "../css/partials/mixin";
+@import "../css/partials/reset";
+@import "../css/partials/variables";
+
+
+.sectionSpecial{
+    width:100%;@include padding(20px 40px);margin-top:20px;background-color:$white2;
+    overflow:hidden;
+
+
+    .special1-container{
+        width:100%;@include flex(flex-start,center);@include Inter;margin-bottom:20px;
+    }
+
+    .special-1{
+        @include padding(10px);flex-basis:20%;;@include Inter;
+
+        .special-owner{
+            color:$grey2;font-size: 16px;font-style: normal;font-weight:500;line-height: normal;
+            margin-bottom:10px;
+        }
+
+        .special-name{
+            color:$grey2;font-size: 14px;font-style: normal;font-weight: 300;line-height: normal;
+        }
+
+    }
+
+
+    .tracking-id{
+        @include flex(center,center);@include padding(15px);
+        flex-basis:20%;
+
+        div{
+            border-radius: 4px;background:rgba(79, 79, 79,0.1);@include padding(10px);
+            color:$grey2;font-size: 14px;font-style: normal;font-weight: 400;
+            width:100%;text-align: center;word-break: break-all;
+        }
+    }
+
+
+    .links{
+        @include flex(flex-start,center);flex-basis:25%;
+
+        a{
+            @include padding(10px);text-decoration:none;background-color:$red;color:$white;
+            border-radius:4px;transition:0.5s;border:1px solid $red;margin-right:10px;
+            font-size: 11px;font-style: normal;font-weight: 500;line-height: normal;
+
+            @include maxScreen($tablet){
+                font-size:8px;@include padding(5px);
+            }
+
+            &:hover{
+                background-color:$white;color:$red;
+            }
+
+        }
+
+        .hold{
+            color:white;background-color:black;border-color:transparent;
+        }
+
+        .unhold{
+            color:black;background-color:white;border-color:transparent;
+        }
+    }
+
+
+    .item-status{
+        @include flex(center,center);flex-basis:15%;
+
+        span{
+            color:$grey2;font-size: 16px;font-style: normal;font-weight: 400;line-height: normal;
+
+            @include maxScreen($tablet){
+                font-size:13px;
+            }
+
+        }
+
+        div{
+            color:$red;font-size: 10px;font-style: normal;font-weight: 600;line-height: normal;
+            margin-left:10px;border-radius: 61px;background:#FFEAE5;@include padding(10px);
+
+            @include maxScreen($tablet){
+                font-size:7px;@include padding(5px);
+            }
+        }
+
+        .green{
+            color:$green;background: #E6FEEB;
+        }
+    }
+
+
+   
+}
