@@ -1,0 +1,198 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section1 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 60px;
+}
+@media only screen and (max-width: 1023px) {
+  .section1 {
+    padding: 20px 20px;
+  }
+}
+.section1 div {
+  margin-left: 10px;
+  color: #049925;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 8px;
+  border-radius: 61px;
+  background: #E6FEEB;
+}
+@media only screen and (max-width: 1023px) {
+  .section1 div {
+    font-size: 8px;
+  }
+}
+.section1 .red {
+  color: #FF4D25;
+  background: #FFE5E5;
+}
+.section1 span {
+  color: #4F4F4F;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.section2 {
+  padding: 20px 60px;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 {
+    padding: 20px 20px;
+  }
+}
+.section2 .first {
+  margin-bottom: 20px;
+}
+.section2 .first label {
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  font-family: "Inter", sans-serif;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .first label {
+    font-size: 13px;
+  }
+}
+.section2 .first input {
+  width: 400px;
+  padding: 15px 10px;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #BDBDBD;
+  background: #FFF;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .first input {
+    padding: 7px 10px;
+    width: 100%;
+  }
+}
+.section2 .first textarea {
+  width: 400px;
+  resize: none;
+  height: 300px;
+  margin-top: 10px;
+  border: 1px solid #BDBDBD;
+  background: #FFF;
+  border-radius: 3px;
+  outline: none;
+  padding: 15px;
+}
+@media only screen and (max-width: 1023px) {
+  .section2 .first textarea {
+    padding: 10px 10px;
+    width: 100%;
+  }
+}
+
+.update {
+  width: 400px;
+  padding: 15px 10px;
+  font-family: "Inter", sans-serif;
+  color: #FFF;
+  background-color: #FF4D25;
+  outline: none;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 1023px) {
+  .update {
+    padding: 10px 10px;
+    width: 100%;
+    font-size: 11px;
+  }
+}
+
+.black {
+  background-color: black;
+}
+
+.link {
+  padding: 0px 60px;
+}
+@media only screen and (max-width: 1023px) {
+  .link {
+    padding: 0px 20px;
+  }
+}
+.link a {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  text-decoration: none;
+}
+
+.past {
+  margin-top: 60px;
+  padding: 10px 60px;
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+  font-family: "Inter", sans-serif;
+}
+@media only screen and (max-width: 1023px) {
+  .past {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+ol {
+  padding: 10px 70px;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 1023px) {
+  ol {
+    padding: 10px 40px;
+  }
+}
+ol li {
+  margin-bottom: 10px;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+ol li a {
+  margin-left: 50px;
+  text-decoration: none;
+  color: #000;
+}
+@media only screen and (max-width: 1023px) {
+  ol li {
+    font-size: 13px;
+  }
+}/*# sourceMappingURL=update-location.css.map */
