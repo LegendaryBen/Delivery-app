@@ -7,9 +7,22 @@
     width:100%;@include padding(20px 40px);margin-top:20px;background-color:$white2;
     overflow:hidden;
 
+    @include minMaxScreen($laptopMin,$laptopMax){
+        @include padding(20px 20px);
+    }
+
+    @include maxScreen($tablet){
+        @include padding(20px 20px);overflow:auto;
+    }
+
 
     .special1-container{
         width:100%;@include flex(flex-start,center);@include Inter;margin-bottom:20px;
+
+        @include maxScreen($tablet){
+            width:900px;
+        }
+
     }
 
     .special-1{
@@ -18,10 +31,20 @@
         .special-owner{
             color:$grey2;font-size: 16px;font-style: normal;font-weight:500;line-height: normal;
             margin-bottom:10px;
+
+            @include maxScreen($tablet){
+                font-size:13px;
+            }
         }
 
         .special-name{
             color:$grey2;font-size: 14px;font-style: normal;font-weight: 300;line-height: normal;
+
+
+            @include maxScreen($tablet){
+                font-size:11px;
+            }
+
         }
 
     }
@@ -35,6 +58,14 @@
             border-radius: 4px;background:rgba(79, 79, 79,0.1);@include padding(10px);
             color:$grey2;font-size: 14px;font-style: normal;font-weight: 400;
             width:100%;text-align: center;word-break: break-all;
+
+            @include minMaxScreen($laptopMin,$laptopMax){
+                font-size:11px;
+            }
+        
+            @include maxScreen($tablet){
+                font-size:11px;
+            }
         }
     }
 
