@@ -407,4 +407,41 @@ body {
 .sidemenu .sidemenu-change a {
   text-decoration: none;
   color: #F2F2F2;
+}
+
+.error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  color: white;
+  background-color: #FF4D25;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  transition: 0.5s;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media only screen and (max-width: 1023px) {
+  .error {
+    font-size: 15px;
+    height: 70px;
+  }
+}
+.error div {
+  margin-right: 30px;
+}
+.error span {
+  font-size: 40px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1023px) {
+  .error span {
+    font-size: 30px;
+  }
 }/*# sourceMappingURL=ship.css.map */

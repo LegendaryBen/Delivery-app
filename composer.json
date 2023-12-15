@@ -1,0 +1,15 @@
+{
+    "name": "user/delivery",
+    "autoload": {
+        "psr-4": {
+            "User\\Delivery\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Chukwuezi Benjamin Chimaobi",
+            "email": "benjaminchima072@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -287,3 +287,26 @@ body{
     }
 
 }
+
+.error{
+    position:fixed;top:0;left:0;height:100px;width:100%;color:white;background-color:$red;
+    z-index:200;@include flex(center,center);@include padding(30px);transition:0.5s;
+    @include Inter;font-weight:bold;font-size:20px;
+
+
+    @include maxScreen($tablet){
+        font-size:15px;height:70px;
+    }
+
+    div{
+        margin-right:30px;
+    }
+
+    span{
+        font-size:40px;cursor: pointer;
+
+        @include maxScreen($tablet){
+            font-size:30px;
+        }
+    }
+}
