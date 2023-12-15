@@ -1,3 +1,7 @@
+<?php
+    require_once "./fetch-users.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +28,8 @@
     </div>
     <div class="section2">
         <span class="admin">Admin Dashboard</span>
-        <form action="">
-            <input type="text" name="" id="" placeholder="search...">
+        <form action="admin-home.php" method="GET">
+            <input type="text" name="search" id="" placeholder="search...">
             <button type="submit"><span class="material-symbols-outlined">search</span></button>
         </form>
     </div>
@@ -40,20 +44,25 @@
             <span>After generating a tracking code, the application will be moved to the “currently shipped section”</span>
         </div>
     </div>
+
+    <?php if(count($result['res']) !== 0):?>
+    
+    <?php if(!isset($_GET['search'])) : ?>
     <div class="section5">
+        <?php foreach($result['res'] as $key => $value):?>
         <div class="items">
             <div class="item-children">
                 <div class="item-owner">
-                    <span>1.</span>
-                    Anselem Ezenwa
+                    <span><?=$result['count']?>.</span>
+                    <?= $value['sender-name'] ?>
                 </div>
-                <div class="item-name"><span>Item name:</span>Cake</div>
+                <div class="item-name"><span>Item name:</span><?= $value['item-name'] ?></div>
             </div>
             <div class="item-children">
                 <div class="item-owner">
-                    Marvin Mckinney
+                    <?= $value['receiver-name'] ?>
                 </div>
-                <div class="item-name"><span>Address:</span>23 dick road, pussylo, India</div>
+                <div class="item-name"><span>Address:</span><?= $value['receiver-address'] ?></div>
             </div>
             <div class="item-children links">
                 <a href="">Genetarate tracking ID</a>
@@ -64,65 +73,79 @@
                 <span>Status:</span>
                 <div>pending approval</div>
             </div>
+            <?php $result['count'] += 1 ?>
         </div>
-        <div class="items">
-            <div class="item-children">
-                <div class="item-owner">
-                    <span>1.</span>
-                    Anselem Ezenwa
-                </div>
-                <div class="item-name"><span>Item name:</span>Cake</div>
-            </div>
-            <div class="item-children">
-                <div class="item-owner">
-                    Marvin Mckinney
-                </div>
-                <div class="item-name"><span>Address:</span>23 dick road, pussylo, India</div>
-            </div>
-            <div class="item-children links">
-                <a href="">Genetarate tracking ID</a>
-                <a href="">Details</a>
-                <a href="">Delete</a>
-            </div>
-            <div class="item-children item-status">
-                <span>Status:</span>
-                <div>pending approval</div>
-            </div>
-        </div>
-        <div class="items">
-            <div class="item-children">
-                <div class="item-owner">
-                    <span>1.</span>
-                    Anselem Ezenwa
-                </div>
-                <div class="item-name"><span>Item name:</span>Cake</div>
-            </div>
-            <div class="item-children">
-                <div class="item-owner">
-                    Marvin Mckinney
-                </div>
-                <div class="item-name"><span>Address:</span>23 dick road, pussylo, India</div>
-            </div>
-            <div class="item-children links">
-                <a href="">Genetarate tracking ID</a>
-                <a href="">Details</a>
-                <a href="">Delete</a>
-            </div>
-            <div class="item-children item-status">
-                <span>Status:</span>
-                <div>pending approval</div>
-            </div>
-        </div>
+        <?php endforeach;?>
     </div>
     <div class="paginate">
-        <!-- <div class="previous diff">Previous</div> -->
-        <a href="" class="diff">Previous</a>
+        <?php if($result['check']>1): ?>
+            <a href="admin-home.php?num=<?= $result['check']-1 ?>" class="diff">Previous</a>
+        <?php else: ?>
+            <div class="previous diff">Previous</div>
+        <?php endif; ?>
         <div class="numbers">
-            <a href="" class="active">1</a>
-            <a href="">2</a>
+            <?php for($i = 1;$i<=$result['num'];$i++): ?>
+                <a href="admin-home.php?num=<?= $i; ?>" class="active <?= $i; ?>"><?= $i; ?></a>
+            <?php endfor; ?>
         </div>
-        <!-- <div class="next diff">Next</div> -->
-        <a href="" class="diff">Next</a>
+        <?php if($result['check'] < $result['num']):?>
+            <a href="admin-home.php?num=<?= $result['check']+1 ?>" class="diff">Next</a>
+        <?php else: ?>
+            <div class="next diff">Next</div>
+        <?php endif;?>
     </div>
+    <?php endif;?>
+        
+    <?php if(isset($_GET['search'])): ?>
+    <div class="section5">
+        <?php foreach($result['res'] as $key => $value):?>
+        <div class="items">
+            <div class="item-children">
+                <div class="item-owner">
+                    <span><?=$result['count']?>.</span>
+                    <?= $value['sender-name'] ?>
+                </div>
+                <div class="item-name"><span>Item name:</span><?= $value['item-name'] ?></div>
+            </div>
+            <div class="item-children">
+                <div class="item-owner">
+                    <?= $value['receiver-name'] ?>
+                </div>
+                <div class="item-name"><span>Address:</span><?= $value['receiver-address'] ?></div>
+            </div>
+            <div class="item-children links">
+                <a href="">Genetarate tracking ID</a>
+                <a href="">Details</a>
+                <a href="" class="spec">Delete</a>
+            </div>
+            <div class="item-children item-status">
+                <span>Status:</span>
+                <div>pending approval</div>
+            </div>
+            <?php $result['count'] += 1 ?>
+        </div>
+        <?php endforeach;?>
+    </div>
+    <div class="paginate">
+        <?php if($result['check']>1): ?>
+            <a href="admin-home.php?num=<?= $result['check']-1 ?>&search=<?= htmlentities($_GET['search']) ?>" class="diff">Previous</a>
+        <?php else: ?>
+            <div class="previous diff">Previous</div>
+        <?php endif; ?>
+        <div class="numbers">
+            <?php for($i = 1;$i<=$result['num'];$i++): ?>
+                <a href="admin-home.php?num=<?= $i; ?>&search=<?= htmlentities($_GET['search']) ?>" class="active <?= $i; ?>"><?= $i; ?></a>
+            <?php endfor; ?>
+        </div>
+        <?php if($result['check'] < $result['num']):?>
+            <a href="admin-home.php?num=<?= $result['check']+1 ?>&search=<?= htmlentities($_GET['search']) ?>" class="diff">Next</a>
+        <?php else: ?>
+            <div class="next diff">Next</div>
+        <?php endif;?>
+    </div>
+    <?php endif;?>
+
+    <?php endif;?>
+
 </body>
 </html>
