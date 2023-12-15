@@ -2,7 +2,7 @@
     "name": "user/delivery",
     "autoload": {
         "psr-4": {
-            "User\\Delivery\\": "src/"
+            "Acme\\": "src/"
         }
     },
     "authors": [

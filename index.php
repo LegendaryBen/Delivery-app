@@ -14,11 +14,11 @@
 <body>
     <div class="body-container">
         <div class="section1">
-            <img src="/images/deliver-back.jpg" alt="" class="img">
+            <img src="images/deliver-back.jpg" alt="" class="img">
             <div class="section1-content">
                 <div class="header">
                     <div class="first">
-                        <img src="/images/Logo.svg" alt="" >
+                        <img src="images/Logo.svg" alt="" >
                         <div>SureLinkExpress</div>
                     </div>
                     <div class="link">
@@ -44,7 +44,7 @@
                 <div class="form-container">
                     <form action="">
                         <div>
-                            <img src="/images/lolly.svg" alt="">
+                            <img src="images/lolly.svg" alt="">
                             <input type="text" name="" id="" placeholder="Enter your tracking code here" class="text">
                         </div>
                         <input type="submit" value="Track" class="submit" >

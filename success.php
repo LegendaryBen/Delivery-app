@@ -44,7 +44,7 @@
             We have received your order, Please be patient we’ll get back to you shortly.
         </div>
         <div class="go-home">
-            <a href="">Go home</a>
+            <a href="index.php">Go home</a>
         </div>
     </div>
     <div class="sidemenu">

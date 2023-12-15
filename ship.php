@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <form action="" class="section2">
+        <form action="submit-details.php" method="POST" class="section2">
             <div class="form-details first">
                 <div class="back-btn b1">
                     <span class="material-symbols-outlined">arrow_back</span>
@@ -130,17 +130,17 @@
                     <div class="user-input">
                         <div class="user-box">
                             <label>Sender’s name</label><br>
-                            <input type="text" name="" id="" class="sender-name">
+                            <input type="text" name="sender-name" id="" class="sender-name">
                         </div>
                         <div class="user-box">
                             <label>Address</label><br>
-                            <input type="text" name="" id="" class="sender-add">
+                            <input type="text" name="sender-address" id="" class="sender-add">
                         </div>
                     </div>
                     <div class="user-input">
                         <div class="user-box">
                             <label>Phone Number <span>(start with country code)</span></label><br>
-                            <input type="text" name="" id="" class="sender-num">
+                            <input type="text" name="sender-phone" id="" class="sender-num">
                         </div>
                         <div class="user-box"></div>
                     </div>
@@ -152,17 +152,17 @@
                     <div class="user-input">
                         <div class="user-box">
                             <label>Receiver’s name</label><br>
-                            <input type="text" name="" id="" class="receiver-name">
+                            <input type="text" name="receiver-name" id="" class="receiver-name">
                         </div>
                         <div class="user-box">
                             <label>Pick-up address</label><br>
-                            <input type="text" name="" id="" class="receiver-add">
+                            <input type="text" name="receiver-address" id="" class="receiver-add">
                         </div>
                     </div>
                     <div class="user-input">
                         <div class="user-box">
                             <label>Phone Number <span>(start with country code)</span></label><br>
-                            <input type="text" name="" id="" class="receiver-num">
+                            <input type="text" name="receiver-phone" id="" class="receiver-num">
                         </div>
                         <div class="user-box"></div>
                     </div>
@@ -174,22 +174,22 @@
                     <div class="user-input">
                         <div class="user-box">
                             <label>Item name</label><br>
-                            <input type="text" name="" id="" class="item-name">
+                            <input type="text" name="item-name" id="" class="item-name">
                         </div>
                         <div class="user-box">
                             <label>Weight(KG)</label><br>
-                            <input type="text" name="" id="" class="item-weight">
+                            <input type="text" name="item-weight" id="" class="item-weight">
                         </div>
                     </div>
                     <div class="user-input">
                         <div class="user-box">
                             <label>Value ($)</label><br>
-                            <input type="text" name="" id="" placeholder="eg. $10500" class="item-val">
+                            <input type="text" name="item-value" id="" placeholder="eg. $10500" class="item-val">
                         </div>
                         <div class="user-box"></div>
                     </div>
                 </div>
-                <input type="submit" value="Submit order" class="submit proceed">
+                <input type="submit" value="Submit order" class="submit proceed" name="submit">
             </div>
         </form>
         <div class="sidemenu">
@@ -221,14 +221,22 @@
                 <a href="">Contact us</a>
             </div>
         </div>
-        <div class="error">
-            <div>
-                Input fields must not be empty!
+
+        <?php if(isset($_GET['error'])) :?>
+            <div class="error">
+                <div>
+                    <?php echo htmlentities($_GET['error']) ?>
+                </div>
+                <span class="material-symbols-outlined">close</span>
             </div>
-            <span class="material-symbols-outlined">close</span>
-        </div>
+        <?php endif ?>
+
         <script src="scripts/ship.js"></script>
-        <script src="scripts/error.js"></script>
+
+        <?php if(isset($_GET['error'])) :?>
+            <script src="scripts/error.js"></script>
+        <?php endif ?>
+
     </div>
 </body>
 </html>
