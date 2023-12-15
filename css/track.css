@@ -183,6 +183,10 @@
     font-size: 14px;
   }
 }
+.tracks .track-message {
+  color: #000;
+  margin-bottom: 10px;
+}
 .tracks .track-status {
   content: "";
   position: absolute;
@@ -193,6 +197,9 @@
   border-radius: 50%;
   z-index: 3;
   top: 1px;
+}
+.tracks .held {
+  color: #EB3800;
 }
 
 .pick-up {

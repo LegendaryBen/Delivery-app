@@ -131,9 +131,17 @@
 
     }
 
+    .track-message{
+        color:$black;margin-bottom:10px;
+    }
+
     .track-status{
         content:'';position:absolute;left:-6.3px;height:13px;width:13px;background-color:white;
         border-radius:50%;z-index:3;top:1px;
+    }
+
+    .held{
+        color:$red2;
     }
 
 
