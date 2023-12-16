@@ -526,5 +526,34 @@ class AdminModel{
     }
 
 
+    public function endShipping($con,$id){
+
+        $this->updateCurrent($id,$con);
+
+        $status = 'complete';
+
+        $sql = "update Submitted set `status` = :status where `tracking-code` = :track ";
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->bindParam(':status',$status);
+
+        $stmt->bindParam(':track',$id);
+
+        $stmt->execute();
+
+        if(!$stmt){
+             
+            header("location:update-location.php?id=$id&error=Internal server error!&change=pop");
+            exit;
+
+        }
+
+        header('location:admin-currently-shipped.php');
+        exit;
+
+    }
+
+
     
 }

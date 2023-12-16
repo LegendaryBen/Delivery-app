@@ -112,8 +112,13 @@ class AdminController{
 
     public function deletePast3($db,$con,$id,$ship){
 
-        $db->deletePast2($con,$id,$ship);
+        $db->deletePast3($con,$id,$ship);
  
+    }
+
+
+    public function endShipping($con,$db,$id){
+        $db->endShipping($con,$id);
     }
 
     

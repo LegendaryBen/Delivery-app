@@ -37,7 +37,7 @@
         <input type="submit" value="Update" class="update" name="submit">
     </form>
     <div class="link">
-        <a href="" class="update">End shipping</a>
+        <a href="end-shipping.php?id=<?= $id ?>" class="update">End shipping</a>
     </div>
     <div class="past">
         Past locations
