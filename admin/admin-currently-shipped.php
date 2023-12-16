@@ -73,9 +73,9 @@
                 <?php if($value['held'] == "false"):?>
                 <a href="update-location.php?id=<?= $value['tracking-code'] ?>">Update location</a>
                 <a href="details.php?id=<?= $value['id'] ?>">Details</a>
-                <a href="update-hold.php?id=<?= $value['id'] ?>" class="hold">Hold</a>
+                <a href="update-hold.php?id=<?= $value['tracking-code'] ?>" class="hold">Hold</a>
                 <?php else: ?>
-                <a href="update-unhold.php?id=<?= $value['id'] ?>" class="unhold">Unhold</a>
+                <a href="update-unhold.php?id=<?= $value['tracking-code'] ?>" class="unhold">Unhold</a>
                 <?php endif;?>
             </div>
             <div class="item-status">
@@ -133,9 +133,9 @@
                 <?php if($value['held'] == "false"):?>
                 <a href="update-location.php?id=<?= $value['tracking-code'] ?>&search=<?= htmlentities($_GET['search']) ?>">Update location</a>
                 <a href="details.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>">Details</a>
-                <a href="update-hold.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>" class="hold">Hold</a>
+                <a href="update-hold.php?id=<?= $value['tracking-code'] ?>&search=<?= htmlentities($_GET['search']) ?>" class="hold">Hold</a>
                 <?php else: ?>
-                <a href="update-unhold.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>" class="unhold">Unhold</a>
+                <a href="update-unhold.php?id=<?= $value['tracking-code'] ?>&search=<?= htmlentities($_GET['search']) ?>" class="unhold">Unhold</a>
                 <?php endif;?>
             </div>
             <div class="item-status">

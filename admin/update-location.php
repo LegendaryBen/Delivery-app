@@ -43,11 +43,9 @@
         Past locations
     </div>
     <ol>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
+        <?php foreach($result as $key => $value):?>
+            <li><span><?= $value['location'] ?></span><a href="delete-past.php?id=<?= $value['id'] ?>&ship=<?= $value['shipping-id'] ?>"><span class="material-symbols-outlined">close</span></a></li>
+        <?php endforeach ?>
     </ol>
 
     <?php if(isset($_GET['error'])) :?>

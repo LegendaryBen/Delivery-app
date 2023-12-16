@@ -271,28 +271,123 @@ class AdminModel{
 
     public function addLocation($location,$date,$time,$shipping,$con){
 
-      $sql = "insert into Tracking(`shipping-id`,`location`,`date`,`time`) 
-       values(:shipping,:location,:date,:time)";
+        $this->updateCurrent($shipping,$con);
 
-       $stmt = $con->prepare($sql);
+        $sql = "insert into Tracking(`shipping-id`,`location`,`date`,`time`) 
+        values(:shipping,:location,:date,:time)";
 
-       $stmt->bindParam(':shipping',$shipping);
-       $stmt->bindParam(':location',$location);
-       $stmt->bindParam(':date',$date);
-       $stmt->bindParam(':time',$time);
+        $stmt = $con->prepare($sql);
 
-       $stmt->execute();
+        $stmt->bindParam(':shipping',$shipping);
+        $stmt->bindParam(':location',$location);
+        $stmt->bindParam(':date',$date);
+        $stmt->bindParam(':time',$time);
 
-       if(!$stmt){
-            header("location:update-location.php?id=$shipping&error=Internal server error!&change=pop");
+        $stmt->execute();
+
+        if(!$stmt){
+                header("location:update-location.php?id=$shipping&error=Internal server error!&change=pop");
+                exit;
+        }
+
+        header("location:update-location.php?id=$shipping&error=Location has been added!&change=success");
+        exit;
+
+    }
+
+
+    private function setHold($shipping,$con){
+
+        $held = 'true';
+        $sql = "update Submitted set `held`=:held where `tracking-code`=:track";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(":held",$held);
+        $stmt->bindParam(":track",$shipping);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header("location:update-hold.php?id=$shipping&error=Internal server error!&change=pop");
             exit;
-       }
+        }
 
-       header("location:update-location.php?id=$shipping&error=Location has been added!&change=success");
-       exit;
+    }
 
+
+    public function addHoldLocation($location,$date,$time,$shipping,$message,$con){
+
+        $this->setHold($shipping,$con);
+
+        $this->updateCurrent($shipping,$con);
+
+
+        $held = 'true';
+        $ship = 'held';
+        $sql = "insert into Tracking(`shipping-id`,`location`,`date`,`time`,`message`,`held`,`shipping-title`) 
+        values(:shipping,:location,:date,:time,:message,:held,:shippingtitle)";
+
+        
+        $stmt = $con->prepare($sql);
+
+        $stmt->bindParam(':shipping',$shipping);
+        $stmt->bindParam(':location',$location);
+        $stmt->bindParam(':date',$date);
+        $stmt->bindParam(':time',$time);
+        $stmt->bindParam(':message',$message);
+        $stmt->bindParam(':held',$held);
+        $stmt->bindParam(':shippingtitle',$ship);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header("location:update-hold.php?id=$shipping&error=Internal server error!&change=pop");
+            exit;
+        }
+
+        header("location:admin-currently-shipped.php");
+        exit;
 
 
     }
+
+
+    private function updateCurrent($shipping,$con){
+        $current = 'true';
+        $sql = "update Tracking set `current` = 'false'  where `current` = :current and `shipping-id`=:shipping";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(':current',$current);
+        $stmt->bindParam(':shipping',$shipping);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header("location:update-location.php?id=$shipping&error=Internal server error!&change=pop");
+            exit;
+        }
+
+    }
+
+
+    public function getPast($con,$shipping){
+
+        $sql = "select * from Tracking where `shipping-id`=:shipping";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(':shipping',$shipping);
+        $stmt->execute();
+
+        if(!$stmt){
+
+            header('location:admin-currently-shipped.php');
+            exit;
+
+        }
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+
+
+    }
+
     
 }

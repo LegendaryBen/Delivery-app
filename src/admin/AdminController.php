@@ -44,12 +44,38 @@ class AdminController{
         $db->addLocation($location,$date,$time,$shipping,$con);
     }
 
+    public function addHoldLocation($location,$date,$time,$shipping,$message,$con,$db){
+
+        $this->checkHold($location,$date,$time,$shipping,$message);
+
+        $db->addHoldLocation($location,$date,$time,$shipping,$message,$con);
+
+    }
+
+    private function checkHold($location,$date,$time,$shipping,$message){
+
+        if($location == ''||$date == ''|| $time == '' || $shipping == ''||$message == ''){
+            header("location:update-hold.php?id=$shipping&error=Input fields should not be empty!&change=pop");
+            exit;
+        }
+
+    }
+
+
     private function checkEmptyValues($location,$date,$time,$shipping){
 
         if($location == ''||$date == ''|| $time == '' || $shipping == ''){
             header("location:update-location.php?id=$shipping&error=Input fields should not be empty!&change=pop");
             exit;
         }
+
+    }
+
+    public function getPastLocations($shipping,$db,$con){
+
+        $result = $db->getPast($con,$shipping);
+
+        return $result;
 
     }
     
