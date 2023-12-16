@@ -71,7 +71,7 @@
             </div>
             <div class="links">
                 <?php if($value['held'] == "false"):?>
-                <a href="update-location.php?id=<?= $value['id'] ?>">Update location</a>
+                <a href="update-location.php?id=<?= $value['tracking-code'] ?>">Update location</a>
                 <a href="details.php?id=<?= $value['id'] ?>">Details</a>
                 <a href="update-hold.php?id=<?= $value['id'] ?>" class="hold">Hold</a>
                 <?php else: ?>
@@ -131,7 +131,7 @@
             </div>
             <div class="links">
                 <?php if($value['held'] == "false"):?>
-                <a href="update-location.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>">Update location</a>
+                <a href="update-location.php?id=<?= $value['tracking-code'] ?>&search=<?= htmlentities($_GET['search']) ?>">Update location</a>
                 <a href="details.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>">Details</a>
                 <a href="update-hold.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>" class="hold">Hold</a>
                 <?php else: ?>

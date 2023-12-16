@@ -1,3 +1,7 @@
+<?php
+  require_once 'validate-code.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +16,25 @@
     <title>SureLinkExpress</title>
 </head>
 <body>
-    <div class="section1">
-        <span>Status:</span>
+    <a class="section1" href="admin-currently-shipped.php">
+        <span>Home:</span>
         <div>shipping</div>
-    </div>
-    <form class="section2">
+    </a>
+    <form class="section2" action="add-location.php" method="POST">
         <div class="first">
             <label>New location</label><br/>
-            <input type="text" name="" id="">
+            <input type="text" name="location" id="">
         </div>
         <div class="first">
             <label>Date</label><br/>
-            <input type="text" name="" id="">
+            <input type="text" name="date" id="">
         </div>
         <div class="first">
             <label>Time</label><br/>
-            <input type="text" name="" id="">
+            <input type="text" name="time" id="">
         </div>
-        <input type="submit" value="Update" class="update">
+        <input type="hidden" name="id" value="<?= $id ?>">
+        <input type="submit" value="Update" class="update" name="submit">
     </form>
     <div class="link">
         <a href="" class="update">End shipping</a>
@@ -44,5 +49,19 @@
         <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
         <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
     </ol>
+
+    <?php if(isset($_GET['error'])) :?>
+        <div class="error <?= htmlentities($_GET['change']) ?>">
+            <div>
+                <?php echo htmlentities($_GET['error']) ?>
+            </div>
+            <span class="material-symbols-outlined">close</span>
+        </div>
+    <?php endif ?>
+
+    <?php if(isset($_GET['error'])) :?>
+        <script src="../scripts/error.js"></script>
+    <?php endif ?>
+
 </body>
 </html>

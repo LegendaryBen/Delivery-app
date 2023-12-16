@@ -10,6 +10,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 20px 60px;
+  text-decoration: none;
 }
 @media only screen and (max-width: 1023px) {
   .section1 {
@@ -27,6 +28,7 @@
   padding: 8px;
   border-radius: 61px;
   background: #E6FEEB;
+  text-decoration: none;
 }
 @media only screen and (max-width: 1023px) {
   .section1 div {
@@ -195,4 +197,45 @@ ol li a {
   ol li {
     font-size: 13px;
   }
+}
+
+.error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  color: white;
+  background-color: #FF4D25;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  transition: 0.5s;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media only screen and (max-width: 1023px) {
+  .error {
+    font-size: 15px;
+    height: 70px;
+  }
+}
+.error div {
+  margin-right: 30px;
+}
+.error span {
+  font-size: 40px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1023px) {
+  .error span {
+    font-size: 30px;
+  }
+}
+
+.success {
+  background-color: #049925;
 }/*# sourceMappingURL=update-location.css.map */

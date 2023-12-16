@@ -268,5 +268,31 @@ class AdminModel{
         exit;
 
     }
+
+    public function addLocation($location,$date,$time,$shipping,$con){
+
+      $sql = "insert into Tracking(`shipping-id`,`location`,`date`,`time`) 
+       values(:shipping,:location,:date,:time)";
+
+       $stmt = $con->prepare($sql);
+
+       $stmt->bindParam(':shipping',$shipping);
+       $stmt->bindParam(':location',$location);
+       $stmt->bindParam(':date',$date);
+       $stmt->bindParam(':time',$time);
+
+       $stmt->execute();
+
+       if(!$stmt){
+            header("location:update-location.php?id=$shipping&error=Internal server error!&change=pop");
+            exit;
+       }
+
+       header("location:update-location.php?id=$shipping&error=Location has been added!&change=success");
+       exit;
+
+
+
+    }
     
 }

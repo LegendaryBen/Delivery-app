@@ -36,5 +36,21 @@ class AdminController{
     public function delete($con,$db,$id){
         $db->delete($con,$id);
     }
+
+    public function addLocation($location,$date,$time,$shipping,$con,$db){
+
+        $this->checkEmptyValues($location,$date,$time,$shipping);
+
+        $db->addLocation($location,$date,$time,$shipping,$con);
+    }
+
+    private function checkEmptyValues($location,$date,$time,$shipping){
+
+        if($location == ''||$date == ''|| $time == '' || $shipping == ''){
+            header("location:update-location.php?id=$shipping&error=Input fields should not be empty!&change=pop");
+            exit;
+        }
+
+    }
     
 }
