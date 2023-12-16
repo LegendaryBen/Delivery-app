@@ -22,5 +22,9 @@ class AdminController{
         $result = $db->detail($con,$id);
         return $result;
     }
+
+    public function delete($con,$db,$id){
+        $db->delete($con,$id);
+    }
     
 }

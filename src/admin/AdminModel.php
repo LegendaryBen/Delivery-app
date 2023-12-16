@@ -153,7 +153,27 @@ class AdminModel{
 
         return $result;
 
+    }
 
+
+    public function delete($con,$id){
+
+        $status = "panding";
+
+        $sql = "delete from Submitted where `status` = :status and `id`= :id";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(':status',$status);
+        $stmt->bindParam(":id",$id);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header('location:admin-home.php');
+            exit;
+        }
+
+        header('location:admin-home.php');
+        exit;
 
     }
     
