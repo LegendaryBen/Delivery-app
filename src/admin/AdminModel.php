@@ -314,6 +314,24 @@ class AdminModel{
     }
 
 
+    private function setHold2($shipping,$con){
+
+        $held = 'false';
+        $sql = "update Submitted set `held`=:held where `tracking-code`=:track";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(":held",$held);
+        $stmt->bindParam(":track",$shipping);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header("location:update-unhold.php?id=$shipping&error=Internal server error!&change=pop");
+            exit;
+        }
+
+    }
+
+
     public function addHoldLocation($location,$date,$time,$shipping,$message,$con){
 
         $this->setHold($shipping,$con);
@@ -350,6 +368,43 @@ class AdminModel{
 
     }
 
+    public function addHoldLocation2($location,$date,$time,$shipping,$message,$con){
+
+        $this->setHold2($shipping,$con);
+
+        $this->updateCurrent($shipping,$con);
+
+
+        $held = 'true';
+        $ship = 'released';
+        $sql = "insert into Tracking(`shipping-id`,`location`,`date`,`time`,`message`,`held`,`shipping-title`) 
+        values(:shipping,:location,:date,:time,:message,:held,:shippingtitle)";
+
+        
+        $stmt = $con->prepare($sql);
+
+        $stmt->bindParam(':shipping',$shipping);
+        $stmt->bindParam(':location',$location);
+        $stmt->bindParam(':date',$date);
+        $stmt->bindParam(':time',$time);
+        $stmt->bindParam(':message',$message);
+        $stmt->bindParam(':held',$held);
+        $stmt->bindParam(':shippingtitle',$ship);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header("location:update-unhold.php?id=$shipping&error=Internal server error!&change=pop");
+            exit;
+        }
+
+        header("location:admin-currently-shipped.php");
+        exit;
+
+
+    }
+
+
 
     private function updateCurrent($shipping,$con){
         $current = 'true';
@@ -361,7 +416,7 @@ class AdminModel{
         $stmt->execute();
 
         if(!$stmt){
-            header("location:update-location.php?id=$shipping&error=Internal server error!&change=pop");
+            header("location:admin-currently-shipped.php?id=$shipping&error=Internal server error!&change=pop");
             exit;
         }
 

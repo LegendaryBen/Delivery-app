@@ -52,10 +52,27 @@ class AdminController{
 
     }
 
+    public function addHoldLocation2($location,$date,$time,$shipping,$message,$con,$db){
+
+        $this->checkHold2($location,$date,$time,$shipping,$message);
+
+        $db->addHoldLocation2($location,$date,$time,$shipping,$message,$con);
+
+    }
+
     private function checkHold($location,$date,$time,$shipping,$message){
 
         if($location == ''||$date == ''|| $time == '' || $shipping == ''||$message == ''){
             header("location:update-hold.php?id=$shipping&error=Input fields should not be empty!&change=pop");
+            exit;
+        }
+
+    }
+
+    private function checkHold2($location,$date,$time,$shipping,$message){
+
+        if($location == ''||$date == ''|| $time == '' || $shipping == ''||$message == ''){
+            header("location:update-unhold.php?id=$shipping&error=Input fields should not be empty!&change=pop");
             exit;
         }
 

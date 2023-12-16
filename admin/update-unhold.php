@@ -1,3 +1,7 @@
+<?php
+ require_once "validate-code2.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,38 +16,51 @@
     <title>SureLinkExpress</title>
 </head>
 <body>
-    <div class="section1">
-        <span>Status:</span>
+    <a href="admin-currently-shipped.php" class="section1">
+        <span>Home:</span>
         <div class="red">Held</div>
-    </div>
-    <form class="section2">
+    </a>
+    <form action="remove-hold.php" class="section2" method="POST">
         <div class="first">
             <label>New location</label><br/>
-            <input type="text" name="" id="">
+            <input type="text" name="location" id="">
         </div>
         <div class="first">
             <label>Date</label><br/>
-            <input type="text" name="" id="">
+            <input type="text" name="date" id="">
         </div>
         <div class="first">
             <label>Time</label><br/>
-            <input type="text" name="" id="">
+            <input type="text" name="time" id="">
         </div>
         <div class="first">
-            <label>Reason for hold</label><br/>
-            <textarea name="" id=""></textarea>
+            <label>Reason for unhold</label><br/>
+            <textarea name="message" id=""></textarea>
         </div>
-        <input type="submit" value="Update" class="update black">
+        <input type="hidden" name="id" value="<?= $id ?>">
+        <input type="submit" value="Update" class="update black" name="submit">
     </form>
     <div class="past">
         Past locations
     </div>
     <ol>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
-        <li><span>Benjamin</span><a href=""><span class="material-symbols-outlined">close</span></a></li>
+        <?php foreach($result as $key => $value):?>
+            <li><span><?= $value['location'] ?></span><a href="delete-past.php?id=<?= $value['id'] ?>&ship=<?= $value['shipping-id'] ?>"><span class="material-symbols-outlined">close</span></a></li>
+        <?php endforeach ?>
     </ol>
+
+    <?php if(isset($_GET['error'])) :?>
+        <div class="error <?= htmlentities($_GET['change']) ?>">
+            <div>
+                <?php echo htmlentities($_GET['error']) ?>
+            </div>
+            <span class="material-symbols-outlined">close</span>
+        </div>
+    <?php endif ?>
+
+    <?php if(isset($_GET['error'])) :?>
+        <script src="../scripts/error.js"></script>
+    <?php endif ?>
+
 </body>
 </html>
