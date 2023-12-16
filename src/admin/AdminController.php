@@ -95,5 +95,26 @@ class AdminController{
         return $result;
 
     }
+
+    public function deletePast($db,$con,$id,$ship){
+
+       $db->deletePast($con,$id,$ship);
+
+    }
+
+
+    public function deletePast2($db,$con,$id,$ship){
+
+        $db->deletePast2($con,$id,$ship);
+ 
+    }
+
+
+    public function deletePast3($db,$con,$id,$ship){
+
+        $db->deletePast2($con,$id,$ship);
+ 
+    }
+
     
 }

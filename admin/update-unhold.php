@@ -45,7 +45,7 @@
     </div>
     <ol>
         <?php foreach($result as $key => $value):?>
-            <li><span><?= $value['location'] ?></span><a href="delete-past.php?id=<?= $value['id'] ?>&ship=<?= $value['shipping-id'] ?>"><span class="material-symbols-outlined">close</span></a></li>
+            <li><span><?= $value['location'] ?></span><a href="delete-past3.php?id=<?= $value['id'] ?>&ship=<?= $value['shipping-id'] ?>"><span class="material-symbols-outlined">close</span></a></li>
         <?php endforeach ?>
     </ol>
 

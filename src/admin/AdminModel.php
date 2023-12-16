@@ -444,5 +444,87 @@ class AdminModel{
 
     }
 
+
+    public function deletePast($con,$id,$ship){
+
+        $sql = "delete from Tracking where `id`=:id and `shipping-id`=:ship";
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->bindParam(":id",$id);
+        $stmt->bindParam(":ship",$ship);
+
+        $stmt->execute();
+
+        if(!$stmt){
+
+            header("location:update-location.php?id=$ship&error=Internal server error!&change=pop");
+            exit;
+
+        }
+
+
+        header("location:update-location.php?id=$ship");
+        exit;
+
+
+
+    }
+
+
+    public function deletePast2($con,$id,$ship){
+
+        $sql = "delete from Tracking where `id`=:id and `shipping-id`=:ship";
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->bindParam(":id",$id);
+        $stmt->bindParam(":ship",$ship);
+
+        $stmt->execute();
+
+        if(!$stmt){
+
+            header("location:update-hold.php?id=$ship&error=Internal server error!&change=pop");
+            exit;
+
+        }
+
+
+        header("location:update-hold.php?id=$ship");
+        exit;
+
+
+
+    }
+
+
+    public function deletePast3($con,$id,$ship){
+
+        $sql = "delete from Tracking where `id`=:id and `shipping-id`=:ship";
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->bindParam(":id",$id);
+        $stmt->bindParam(":ship",$ship);
+
+        $stmt->execute();
+
+        if(!$stmt){
+
+            header("location:update-unhold.php?id=$ship&error=Internal server error!&change=pop");
+            exit;
+
+        }
+
+
+        header("location:update-unhold.php?id=$ship");
+        exit;
+
+
+
+    }
+
+
     
 }

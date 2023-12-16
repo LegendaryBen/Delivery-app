@@ -26,6 +26,6 @@ if(!isset($_GET['id']) && !isset($_GET['ship'])){
         exit;
     }
 
-    $admin->deletePast($db,$con,$id,$ship);
+    $admin->deletePast2($db,$con,$id,$ship);
 
 }
