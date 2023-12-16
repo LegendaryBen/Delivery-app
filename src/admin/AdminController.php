@@ -13,5 +13,9 @@ class AdminController{
         $result = $db->fetchSearch($con,$seacrh);
         return $result;
     }
+
+    public function generate($con,$db,$id){
+        $db->makeId($con,$id);
+    }
     
 }

@@ -65,7 +65,7 @@
                 <div class="item-name"><span>Address:</span><?= $value['receiver-address'] ?></div>
             </div>
             <div class="item-children links">
-                <a href="">Genetarate tracking ID</a>
+                <a href="generate-id.php?id=<?= $value['id'] ?>">Genetarate tracking ID</a>
                 <a href="">Details</a>
                 <a href="" class="spec">Delete</a>
             </div>

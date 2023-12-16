@@ -104,5 +104,29 @@ class AdminModel{
 
 
     }
+
+
+    public function makeId($con,$id){
+
+        $track = "surelink".time();
+        $status = "accepted";
+
+        $sql = "update Submitted set `tracking-code` = :track, `status` = :status where id=:id";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(':track',$track);
+        $stmt->bindParam(':status',$status);
+        $stmt->bindParam(':id',$id);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header("location:admin-home.php");
+            exit;
+        }
+
+        header("location:admin-home.php");
+        exit;
+
+    }
     
 }
