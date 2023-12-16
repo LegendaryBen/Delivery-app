@@ -9,8 +9,18 @@ class AdminController{
         return $result;
     }
 
+    public function getAccepted($con,$db){
+        $result = $db->fetchAccepted($con);
+        return $result;
+    }
+
     public function getSearchSubmitted($con,$db,$seacrh){
         $result = $db->fetchSearch($con,$seacrh);
+        return $result;
+    }
+
+    public function getSearchAccepted($con,$db,$seacrh){
+        $result = $db->fetchSearchAccepted($con,$seacrh);
         return $result;
     }
 
