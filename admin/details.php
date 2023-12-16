@@ -1,3 +1,7 @@
+<?php
+    require_once 'fetch-details.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,17 +25,17 @@
                 <div class="user-input">
                     <div class="user-box">
                         <label>Sender’s name</label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['sender-name']  ?></div>
                     </div>
                     <div class="user-box">
                         <label>Address</label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['sender-address']  ?></div>
                     </div>
                 </div>
                 <div class="user-input">
                     <div class="user-box">
                         <label>Phone Number <span>(start with country code)</span></label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['sender-phone']  ?></div>
                     </div>
                     <div class="user-box"></div>
                 </div>
@@ -43,17 +47,17 @@
                 <div class="user-input">
                     <div class="user-box">
                         <label>Receiver’s name</label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['receiver-name'] ?></div>
                     </div>
                     <div class="user-box">
                         <label>Pick-up address</label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['receiver-address'] ?></div>
                     </div>
                 </div>
                 <div class="user-input">
                     <div class="user-box">
                         <label>Phone Number <span>(start with country code)</span></label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['receiver-phone']  ?></div>
                     </div>
                     <div class="user-box"></div>
                 </div>
@@ -65,17 +69,17 @@
                 <div class="user-input">
                     <div class="user-box">
                         <label>Item name</label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['item-name']?></div>
                     </div>
                     <div class="user-box">
                         <label>Weight(KG)</label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['item-weight']  ?></div>
                     </div>
                 </div>
                 <div class="user-input">
                     <div class="user-box">
                         <label>Value ($)</label><br>
-                        <div class="inputspecial">dsadjgfs</div>
+                        <div class="inputspecial"><?= $result[0]['item-value']  ?></div>
                     </div>
                     <div class="user-box"></div>
                 </div>

@@ -65,7 +65,7 @@ class AdminModel{
         $start = ($num - 1) * $perpage;
         $pending = "panding";
 
-        $sql1 = "select * from Submitted where `sender-name` regexp :sendername or `receiver-name` regexp :receivername and status=:status limit $perpage offset $start";
+        $sql1 = "select * from Submitted where status=:status and (`sender-name` regexp :sendername or `receiver-name` regexp :receivername) limit $perpage offset $start";
         $stmt1 = $con->prepare($sql1);
         $stmt1->bindParam(':status',$pending);
         $stmt1->bindParam(':sendername',$search);
@@ -79,9 +79,8 @@ class AdminModel{
 
         $res1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
         
-        $sql2 = "select * from Submitted where `sender-name` regexp :sendername or `receiver-name` regexp :receivername and status=:status";
+        $sql2 = "select * from Submitted where status=:status and  (`sender-name` regexp :sendername or `receiver-name` regexp :receivername)";
         $stmt2 = $con->prepare($sql2);
-        $stmt2->bindParam(':status',$pending);
         $stmt2->bindParam(':status',$pending);
         $stmt2->bindParam(':sendername',$search);
         $stmt2->bindParam(':receivername',$search);
@@ -126,6 +125,35 @@ class AdminModel{
 
         header("location:admin-home.php");
         exit;
+
+    }
+
+    public function detail($con,$id){
+
+        $status = "panding";
+
+        $sql = "select * from Submitted where `status` = :status and `id`=:id";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(':status',$status);
+        $stmt->bindParam(":id",$id);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header('location:admin-home.php');
+            exit;
+        }
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if(count($result) == 0){
+            header('location:admin-home.php');
+            exit;
+        }
+
+        return $result;
+
+
 
     }
     

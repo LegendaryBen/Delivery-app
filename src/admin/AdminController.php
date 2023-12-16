@@ -17,5 +17,10 @@ class AdminController{
     public function generate($con,$db,$id){
         $db->makeId($con,$id);
     }
+
+    public function details($con,$db,$id){
+        $result = $db->detail($con,$id);
+        return $result;
+    }
     
 }

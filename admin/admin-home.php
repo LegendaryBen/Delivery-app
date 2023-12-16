@@ -66,7 +66,7 @@
             </div>
             <div class="item-children links">
                 <a href="generate-id.php?id=<?= $value['id'] ?>">Genetarate tracking ID</a>
-                <a href="">Details</a>
+                <a href="details.php?id=<?= $value['id'] ?>">Details</a>
                 <a href="" class="spec">Delete</a>
             </div>
             <div class="item-children item-status">
@@ -114,8 +114,8 @@
                 <div class="item-name"><span>Address:</span><?= $value['receiver-address'] ?></div>
             </div>
             <div class="item-children links">
-                <a href="">Genetarate tracking ID</a>
-                <a href="">Details</a>
+                <a href="generate-id.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>">Genetarate tracking ID</a>
+                <a href="details.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>">Details</a>
                 <a href="" class="spec">Delete</a>
             </div>
             <div class="item-children item-status">
