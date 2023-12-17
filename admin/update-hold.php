@@ -23,15 +23,15 @@
     <form action="add-hold.php" class="section2" method="POST">
         <div class="first">
             <label>New location</label><br/>
-            <input type="text" name="location" id="">
+            <input type="text" name="location" id="" placeholder="china">
         </div>
         <div class="first">
             <label>Date</label><br/>
-            <input type="text" name="date" id="">
+            <input type="text" name="date" id="" placeholder="25 september 2023">
         </div>
         <div class="first">
             <label>Time</label><br/>
-            <input type="text" name="time" id="">
+            <input type="text" name="time" id="" placeholder="4:55pm">
         </div>
         <div class="first">
             <label>Reason for hold</label><br/>

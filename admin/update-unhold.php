@@ -23,15 +23,15 @@
     <form action="remove-hold.php" class="section2" method="POST">
         <div class="first">
             <label>New location</label><br/>
-            <input type="text" name="location" id="">
+            <input type="text" name="location" id="" placeholder="china">
         </div>
         <div class="first">
             <label>Date</label><br/>
-            <input type="text" name="date" id="">
+            <input type="text" name="date" id="" placeholder="23 january 2021">
         </div>
         <div class="first">
             <label>Time</label><br/>
-            <input type="text" name="time" id="">
+            <input type="text" name="time" id="" placeholder="2:30pm">
         </div>
         <div class="first">
             <label>Reason for unhold</label><br/>

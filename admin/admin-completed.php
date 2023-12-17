@@ -23,7 +23,7 @@
             <span>SureLinkExpress</span>
         </div>
         <div class="block2">
-            <a href="">Clich here to go to website’s Home page</a>
+            <a href="../index.php">Clich here to go to website’s Home page</a>
             <span class="material-symbols-outlined">navigate_next</span>
         </div>
     </div>
@@ -35,9 +35,9 @@
         </form>
     </div>
     <div class="section3">
-        <a href="" >Submitted applications</a>
-        <a href="" >Currently shipped</a>
-        <a href="" class="submitted" >Completed</a>
+        <a href="admin-home.php" >Submitted applications</a>
+        <a href="admin-currently-shipped.php" >Currently shipped</a>
+        <a href="admin-completed.php" class="submitted" >Completed</a>
     </div>
     <div class="section4">
         <div>

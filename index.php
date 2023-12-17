@@ -22,12 +22,12 @@
                         <div>SureLinkExpress</div>
                     </div>
                     <div class="link">
-                        <a href="">Home</a>
-                        <a href="">Track</a>
-                        <a href="ship.html">Ship Item</a>
-                        <a href="">Services</a>
-                        <a href="">About Us</a>
-                        <a href="">Contact Us</a>
+                        <a href="index.php">Home</a>
+                        <a href="index.php#track">Track</a>
+                        <a href="ship.php">Ship Item</a>
+                        <a href="index.php#service">Services</a>
+                        <a href="index.php#about">About Us</a>
+                        <a href="mailto:surelinkexpres@gmail.com">Contact Us</a>
                     </div>
                     <div class="ham-container">
                         <div></div>
@@ -41,18 +41,18 @@
                     we redefine the shipping experience with our commitment to seamless logistics solutions. Navigate the complexities of cargo
                     transportation effortlessly with our expert team and state-of-the-art technology 
                 </div>
-                <div class="form-container">
-                    <form action="">
+                <div class="form-container" id="track">
+                    <form action="track.php" method="POST">
                         <div>
                             <img src="images/lolly.svg" alt="">
-                            <input type="text" name="" id="" placeholder="Enter your tracking code here" class="text">
+                            <input type="text" name="track" id="" placeholder="Enter your tracking code here" class="text">
                         </div>
-                        <input type="submit" value="Track" class="submit" >
+                        <input type="submit" value="Track" class="submit" name="submit" >
                     </form>
                 </div>
             </div>
         </div>
-        <div class="section2">
+        <div class="section2" id="about">
             <div class="card">
                 <img src="images/cargo.jpg" alt="">
                 <div class="card-details">
@@ -96,7 +96,7 @@
         <div class="section4">
             
         </div>
-        <div class="section5">
+        <div class="section5" id="service">
             <div class="video1">
                 <div class="video-topic">
                     All kinds of international quality
@@ -130,15 +130,15 @@
                     </div>
                 </div>
                 <div class="video-btn">
-                    <a href="" class="track">Track</a>
-                    <a href="" class="contact">Contact us</a>
+                    <a href="index.php#track" class="track">Track</a>
+                    <a href="mailto:surelinkexpres@gmail.com">Contact Us</a>
                 </div>
             </div>
             <div class="video1">
                 <video src="video/surelink.mp4" controls poster="images/poster.jpg" autoplay loop></video>
             </div>
         </div>
-        <div class="section6">
+        <div class="section6" id="about">
             What people say about us
         </div>
         <div class="section7">
@@ -148,22 +148,22 @@
                 SurelinkExpress
             </div>
             <div class="change">
-                <a href="">Home</a>
+                <a href="index.php">Home</a>
             </div>
             <div class="change">
-                <a href="">Track</a>
+                <a href="index.php#track">Track</a>
             </div>
             <div class="change">
-                <a href="">Ship Item</a>
+                <a href="ship.php">Ship Item</a>
             </div>
             <div class="change">
-                <a href="">Services</a>
+                <a href="index.php#service">Services</a>
             </div>
             <div class="change">
-                <a href="">About us</a>
+                <a href="index.php#about">About us</a>
             </div>
             <div class="change">
-                <a href="">Contact us</a>
+                <a href="mailto:surelinkexpres@gmail.com">Contact Us</a>
             </div>
             <div class="copyright">
                 ©2022 SLE. All rights reserved
@@ -181,22 +181,22 @@
             <span class="material-symbols-outlined cancle">close</span>
         </div>
         <div class="sidemenu-change">
-            <a href="">Home</a>
+            <a href="index.php">Home</a>
         </div>
         <div class="sidemenu-change">
-            <a href="">Track</a>
+            <a href="index.php#track">Track</a>
         </div>
         <div class="sidemenu-change">
-            <a href="">Ship Item</a>
+            <a href="ship.php">Ship Item</a>
         </div>
         <div class="sidemenu-change">
-            <a href="">Services</a>
+            <a href="index.php#service">Services</a>
         </div>
         <div class="sidemenu-change">
-            <a href="">About us</a>
+            <a href="index.php#about">About us</a>
         </div>
         <div class="sidemenu-change">
-            <a href="">Contact us</a>
+            <a href="mailto:surelinkexpres@gmail.com">Contact Us</a>
         </div>
     </div>
     <script src="scripts/index.js"></script>

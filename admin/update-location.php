@@ -23,15 +23,15 @@
     <form class="section2" action="add-location.php" method="POST">
         <div class="first">
             <label>New location</label><br/>
-            <input type="text" name="location" id="">
+            <input type="text" name="location" id="" placeholder="china">
         </div>
         <div class="first">
             <label>Date</label><br/>
-            <input type="text" name="date" id="">
+            <input type="text" name="date" id="" placeholder="24 september 2020">
         </div>
         <div class="first">
             <label>Time</label><br/>
-            <input type="text" name="time" id="">
+            <input type="text" name="time" id="" placeholder="4:56pm">
         </div>
         <input type="hidden" name="id" value="<?= $id ?>">
         <input type="submit" value="Update" class="update" name="submit">

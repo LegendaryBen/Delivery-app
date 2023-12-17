@@ -32,5 +32,14 @@ class UserController{
     }
 
 
+    public function getLocations($con,$db,$id){
+
+        $result = $db->getLocations($con,$id);
+
+        return $result;
+
+    }
+
+
 
 }

@@ -39,5 +39,43 @@ class UserModel{
 
 
     }
+
+
+    public function getLocations($con,$id){
+
+        $sql = "select * from Submitted where `tracking-code`=:track";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(":track",$id);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header('location:index.php');
+            exit;
+        }
+
+        $result1 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $sql = "select * from Tracking where `shipping-id`=:ship";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(":ship",$id);
+
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header('location:index.php');
+            exit;
+        }
+
+
+        $result2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $final = ['res1'=>$result1,'res2'=>$result2];
+
+        return $final;
+
+    }
+
     
 }

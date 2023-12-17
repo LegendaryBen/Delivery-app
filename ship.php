@@ -20,12 +20,12 @@
                     <span>SureLinkExpress</span>
                 </div>
                 <div class="links">
-                    <a href="index.html">Home</a>
-                    <a href="">Track</a>
-                    <a href="">Ship Item</a>
-                    <a href="">Services</a>
-                    <a href="">About Us</a>
-                    <a href="">Contact Us</a>
+                    <a href="index.php">Home</a>
+                    <a href="index.php#track">Track</a>
+                    <a href="ship.php">Ship Item</a>
+                    <a href="index.php#service">Services</a>
+                    <a href="index.php#about">About Us</a>
+                    <a href="mailto:surelinkexpres@gmail.com">Contact Us</a>
                 </div>
                 <div>
                     <div></div>
@@ -203,22 +203,22 @@
                 <span class="material-symbols-outlined cancle">close</span>
             </div>
             <div class="sidemenu-change">
-                <a href="">Home</a>
+                <a href="index.php">Home</a>
             </div>
             <div class="sidemenu-change">
-                <a href="">Track</a>
+                <a href="index.php#track">Track</a>
             </div>
             <div class="sidemenu-change">
-                <a href="">Ship Item</a>
+                <a href="ship.php">Ship Item</a>
             </div>
             <div class="sidemenu-change">
-                <a href="">Services</a>
+                <a href="index.php#service">Services</a>
             </div>
             <div class="sidemenu-change">
-                <a href="">About us</a>
+                <a href="index.php#about">About us</a>
             </div>
             <div class="sidemenu-change">
-                <a href="">Contact us</a>
+                <a href="mailto:surelinkexpres@gmail.com">Contact Us</a>
             </div>
         </div>
 
