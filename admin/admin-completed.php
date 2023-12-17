@@ -70,7 +70,7 @@
                 </div>
                 <div class="links">
                     <a href="details.php?id=<?= $value['id'] ?>">Details</a>
-                    <a href="" class="hold">Delete</a>
+                    <a href="delete-complete.php?id=<?= $value['tracking-code'] ?>" class="hold">Delete</a>
                 </div>
                 <div class="item-status">
                     <span>Status:</span>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="links">
                     <a href="details.php?id=<?= $value['id'] ?>&search=<?= htmlentities($_GET['search']) ?>">Details</a>
-                    <a href="" class="hold">Delete</a>
+                    <a href="delete-complete.php?id=<?= $value['tracking-code'] ?>&search=<?= htmlentities($_GET['search']) ?>" class="hold">Delete</a>
                 </div>
                 <div class="item-status">
                     <span>Status:</span>

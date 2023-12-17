@@ -133,5 +133,12 @@ class AdminController{
         $db->endShipping($con,$id);
     }
 
+
+    public function deleteComplete($con,$db,$id){
+
+       $db->deleteComplete($con,$id); 
+
+    }
+
     
 }

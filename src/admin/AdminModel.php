@@ -655,5 +655,36 @@ class AdminModel{
     }
 
 
-    
+    public function deleteComplete($con,$id){
+
+        $sql = "delete from Submitted where `tracking-code`=:track";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(":track",$id);
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header('location:admin-completed.php');
+            exit;
+        }
+
+        $sql = "delete from Tracking where `shipping-id`=:ship";
+        $stmt = $con->prepare($sql);
+        $stmt->bindParam(":ship",$id);
+
+
+        $stmt->execute();
+
+        if(!$stmt){
+            header('location:admin-completed.php');
+            exit;
+        }
+
+
+        header('location:admin-completed.php');
+        exit;
+
+    }
+
+
 }
