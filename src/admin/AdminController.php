@@ -9,6 +9,11 @@ class AdminController{
         return $result;
     }
 
+    public function getCompleted($con,$db){
+        $result = $db->fetchCompleted($con);
+        return $result;
+    }
+
     public function getAccepted($con,$db){
         $result = $db->fetchAccepted($con);
         return $result;
@@ -18,6 +23,13 @@ class AdminController{
         $result = $db->fetchSearch($con,$seacrh);
         return $result;
     }
+
+
+    public function getSearchCompleted($con,$db,$seacrh){
+        $result = $db->fetchSearchCompleted($con,$seacrh);
+        return $result;
+    }
+
 
     public function getSearchAccepted($con,$db,$seacrh){
         $result = $db->fetchSearchAccepted($con,$seacrh);
