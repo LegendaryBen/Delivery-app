@@ -124,6 +124,7 @@
 
     .track-time{
         color:$grey3;@include Inter;font-size: 18px;font-style: normal;font-weight: 400;line-height: 21px;
+        margin-bottom:20px;
 
         @include maxScreen($tablet){
             font-size:14px;

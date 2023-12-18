@@ -82,6 +82,35 @@
                     <div class="track-city">
                         <?= $value['location'] ?>
                     </div>
+
+                    <div class="track-time">
+                        <?= $result['res1'][0]['sender-name'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['sender-address'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['sender-phone'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['receiver-name'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['receiver-address'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['receiver-phone'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['item-name'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['item-weight'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['item-value'] ?>
+                    </div>
+
                     <div class="track-time">
                         <?= $value['date'] ?> at <?= $value['time'] ?>
                     </div>
@@ -101,6 +130,35 @@
                     <div class="track-time track-message">
                         <?= $value['message'] ?> 
                     </div>
+
+                    <div class="track-time">
+                        <?= $result['res1'][0]['sender-name'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['sender-address'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['sender-phone'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['receiver-name'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['receiver-address'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['receiver-phone'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['item-name'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['item-weight'] ?>
+                    </div>
+                    <div class="track-time">
+                        <?= $result['res1'][0]['item-value'] ?>
+                    </div>
+
                     <div class="track-time">
                         <?= $value['date'] ?> at <?= $value['time'] ?>
                     </div>
