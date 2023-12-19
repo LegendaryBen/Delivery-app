@@ -188,7 +188,7 @@ body{
                     width:100%;@include padding(8px 20px);margin-top:10px;outline:none;
                     border-radius: 3px;border: 1px solid $grey;background:$white;
                     color:$black;@include Inter;font-size: 14px;font-style: normal;font-weight: 400;
-                    line-height: 21px; 
+                    line-height: 21px;word-break: break-all;
 
                     @include maxScreen($tablet){
                         font-size:10px;

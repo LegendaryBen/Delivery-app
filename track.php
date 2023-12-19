@@ -75,97 +75,211 @@
             <?php foreach($result['res2'] as $key => $value) :?>
 
             <?php if($value['held'] == "false"): ?>
+
                 <div class="tracks">
-                    <div class="track-route">
+                    <div class="track-route spoof">
                         <?= $value['shipping-title'] ?>
                     </div>
-                    <div class="track-city">
-                        <?= $value['location'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Current Location:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $value['location'] ?>
+                        </div>
                     </div>
-
-                    <div class="track-time">
-                        <?= $result['res1'][0]['sender-name'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Sender's Name:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['sender-name'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['sender-address'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Sender's Address:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['sender-address'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['sender-phone'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Sender's Phone Number:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['sender-phone'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['receiver-name'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Receiver's Name:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['receiver-name'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['receiver-address'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Receiver's Address:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['receiver-address'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['receiver-phone'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Receiver's Phone Number:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['receiver-phone'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['item-name'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Item Name:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['item-name'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['item-weight'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Item Weight:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['item-weight'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['item-value'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Item Value:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['item-value'] ?>
+                        </div>
                     </div>
-
-                    <div class="track-time">
-                        <?= $value['date'] ?> at <?= $value['time'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Date</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $value['date'] ?> at <?= $value['time'] ?>
+                        </div>
                     </div>
                     <?php if($value['current'] == "true"): ?>
                         <div class="track-status"></div>
                     <?php endif; ?>
                 </div>
+
             <?php else: ?>
 
                 <div class="tracks">
-                    <div class="track-route held">
+                    <div class="track-route spoof">
                         <?= $value['shipping-title'] ?>
                     </div>
-                    <div class="track-city">
-                        <?= $value['location'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Current Location:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $value['location'] ?>
+                        </div>
                     </div>
-                    <div class="track-time track-message">
-                        <?= $value['message'] ?> 
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Notice:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $value['message'] ?>
+                        </div>
                     </div>
-
-                    <div class="track-time">
-                        <?= $result['res1'][0]['sender-name'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Sender's Name:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['sender-name'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['sender-address'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Sender's Address:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['sender-address'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['sender-phone'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Sender's Phone Number:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['sender-phone'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['receiver-name'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Receiver's Name:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['receiver-name'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['receiver-address'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Receiver's Address:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['receiver-address'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['receiver-phone'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Receiver's Phone Number:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['receiver-phone'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['item-name'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Item Name:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['item-name'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['item-weight'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Item Weight:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['item-weight'] ?>
+                        </div>
                     </div>
-                    <div class="track-time">
-                        <?= $result['res1'][0]['item-value'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Item Value:</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $result['res1'][0]['item-value'] ?>
+                        </div>
                     </div>
-
-                    <div class="track-time">
-                        <?= $value['date'] ?> at <?= $value['time'] ?>
+                    <div class="request">
+                        <div class="r-first">
+                            <strong>Date</strong>
+                        </div>
+                        <div class="r-sec">
+                            <?= $value['date'] ?> at <?= $value['time'] ?>
+                        </div>
                     </div>
                     <?php if($value['current'] == "true"): ?>
                         <div class="track-status"></div>
                     <?php endif; ?>
                 </div>
+
             <?php endif ; ?>
 
             <?php endforeach; ?>

@@ -130,8 +130,8 @@
   border-left: 1px solid #FF4D25;
   position: relative;
   padding-left: 20px;
-  padding-bottom: 10px;
   padding-right: 10px;
+  padding-bottom: 30px;
 }
 .tracks::before {
   content: "";
@@ -201,6 +201,31 @@
 }
 .tracks .held {
   color: #EB3800;
+}
+
+.request {
+  width: 100%;
+  word-wrap: break-word;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  flex-direction: column;
+  padding-bottom: 5px;
+}
+.request .r-first {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.request .r-sec {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 400px;
+  line-height: 21px;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 .pick-up {
